@@ -220,6 +220,11 @@ set backspace=indent,eol,start
 set wildmode=full
 "exclusions:
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.pyc,/node_nodules/**,node_modules,node_modules/**/*.*,tmp/**
+"nerd tree settings
+noremap <Leader>n :NERDTreeFind<CR>
+noremap <Leader>m :NERDTreeToggle<CR>
+"key bindings
+noremap <Leader><space> :noh<CR>
 
 augroup HiglightTODO
     autocmd!
