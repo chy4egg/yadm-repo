@@ -31,6 +31,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'godlygeek/tabular'
 Plugin 'MatlabFilesEdition'
+Plugin 'chriskempson/base16-vim'
+Plugin 'Yggdroot/indentLine'
 " ------------------------------------------------------------
 "
 " All of your Plugins must be added before the following line
@@ -117,10 +119,10 @@ filetype plugin on          "required
 "au Syntax * RainbowParenthesesLoadBraces
 
 "indenting
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=black ctermbg=black
-autocmd VimEnter * :IndentGuidesEnable
+"let g:indent_guides_auto_colors = 0
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black ctermbg=black
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=black ctermbg=black
+"autocmd VimEnter * :IndentGuidesEnable
 
 " statusline
 set laststatus=2
@@ -193,14 +195,14 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown    " *.md support
 autocmd VimEnter,BufReadPost,bufwritepost,bufenter * :FixWhitespace
 
 " malokai theme
-let g:molokai_original = 1
-let g:rehash256 = 1
-colorscheme molokai
+"let g:molokai_original = 1
+"let g:rehash256 = 1
+"colorscheme molokai
 
 " solarized8 theme (https://github.com/lifepillar/vim-solarized8)
-set background=dark
-"colorscheme solarized8
-colorscheme solarized8_flat
+"set background=dark
+"colorscheme solarized8_flat
+colorscheme base16-default-dark
 
 " Snippets plugin here :D
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -240,7 +242,7 @@ set rtp+=~/.fzf
 :nnoremap <C-t> :GFiles<CR>
 "change the default searcher to the silver searcher
 if executable('ag')
-  let g:ackprg = 'ag -i --ignore-case --nogroup --nocolor --column --ignore venik.ru'
+    let g:ackprg = 'ag -i --ignore-case --nogroup --nocolor --column --ignore venik.ru'
 endif
 map <Leader>a :Ack<Space>
 
@@ -260,10 +262,10 @@ set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|node_modules|cache|build|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'node_modules',
-  \ }
+            \ 'dir':  '\v[\/]\.(git|node_modules|cache|build|hg|svn)$',
+            \ 'file': '\v\.(exe|so|dll)$',
+            \ 'link': 'node_modules',
+            \ }
 
 "Ack.vim
 Plugin 'mileszs/ack.vim'
