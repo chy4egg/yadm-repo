@@ -90,8 +90,12 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias vimconfig="vim ~/.vimrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
+alias vi='vimx'
+alias vim='vimx'
+
+alias zshconfig="vimx ~/.zshrc"
+alias vimconfig="vimx ~/.vimrc"
+alias ohmyzsh="vimx ~/.oh-my-zsh"
+
 alias ps="cd ~/sites/petshop/"
-#alias ag='ag -i --ignore-case --nogroup --nocolor --column --ignore-dir bitrix --ignore-dir cache --ignore-dir build --ignore-dir node_modules --ignore-dir logs'
+alias ag='ag -i --ignore-case --nogroup --nocolor --column'

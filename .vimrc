@@ -231,7 +231,7 @@ augroup END
 " If installed using git
 set rtp+=~/.fzf
 "Fuzzy remap
-:nnoremap <C-t> :FZF <CR>
+:nnoremap <C-t> :GFiles<CR>
 "change the default searcher to the silver searcher
 if executable('ag')
   let g:ackprg = 'ag -i --ignore-case --nogroup --nocolor --column --ignore venik.ru'
@@ -294,3 +294,10 @@ set expandtab
 autocmd FileType javascript setlocal shiftwidth=4 tabstop=4
 autocmd FileType vue setlocal shiftwidth=4 tabstop=4
 autocmd FileType html       setlocal shiftwidth=4 tabstop=4
+
+"set clipboard to unnamed
+set clipboard=unnamedplus
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
