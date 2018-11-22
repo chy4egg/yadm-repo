@@ -33,6 +33,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'MatlabFilesEdition'
 Plugin 'chriskempson/base16-vim'
 Plugin 'Yggdroot/indentLine'
+Plugin 'mileszs/ack.vim'
 " ------------------------------------------------------------
 "
 " All of your Plugins must be added before the following line
@@ -181,8 +182,9 @@ autocmd VimEnter * call AirlineInit()
 " autocmd vimenter * NERDTree
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+:let g:NERDTreeWinSize=60
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary")
-map <C-n> :NERDTreeToggle<CR>
+"map <C-n> :NERDTreeToggle<CR>
 
 " vim-markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown    " *.md support
@@ -239,7 +241,7 @@ augroup END
 " If installed using git
 set rtp+=~/.fzf
 "Fuzzy remap
-:nnoremap <C-t> :GFiles<CR>
+:nnoremap <Leader>t :GFiles<CR>
 "change the default searcher to the silver searcher
 if executable('ag')
     let g:ackprg = 'ag -i --ignore-case --nogroup --nocolor --column --ignore venik.ru'
@@ -268,7 +270,6 @@ let g:ctrlp_custom_ignore = {
             \ }
 
 "Ack.vim
-Plugin 'mileszs/ack.vim'
 :nnoremap <C-a> :Ack <CR>
 
 "WIM-PLUG
@@ -276,7 +277,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -284,6 +284,7 @@ call plug#end()
 
 " my filetype file
 autocmd BufRead,BufNewFile *.mvue set filetype=vue
+autocmd BufRead,BufNewFile *.twig set filetype=html
 
 
 " Swap files. Generally things are in version control
@@ -309,3 +310,6 @@ noremap <Leader>y "*y
 noremap <Leader>p "*p
 noremap <Leader>Y "+y
 noremap <Leader>P "+p
+
+"ctags (may need to install ctags firts)
+command! MakeTags !ctags -R ~/sites/petshop/nodejs/Js-client
