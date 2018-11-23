@@ -34,6 +34,15 @@ Plugin 'MatlabFilesEdition'
 Plugin 'chriskempson/base16-vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'mileszs/ack.vim'
+"Plugin 'mhinz/vim-grepper'
+Plugin 'posva/vim-vue'
+
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'mattn/emmet-vim'
+Plugin 'ddrscott/vim-side-search'
 " ------------------------------------------------------------
 "
 " All of your Plugins must be added before the following line
@@ -77,9 +86,7 @@ set autoindent		"set auto indent
 set smartindent		"set smart indent
 set copyindent		"use exisiting indents for new indents
 set preserveindent	"save as much indent structure as possible
-
-"UI Config
-set number			"line number
+"UI Config set number			"line number
 set showmatch		"highlight matching [({})]
 set mat=2			"for showmatch, set how many tenth of second it blinks
 set ruler			"show current position
@@ -197,26 +204,25 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown    " *.md support
 autocmd VimEnter,BufReadPost,bufwritepost,bufenter * :FixWhitespace
 
 " malokai theme
-"let g:molokai_original = 1
-"let g:rehash256 = 1
-"colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
+colorscheme molokai
 
 " solarized8 theme (https://github.com/lifepillar/vim-solarized8)
 "set background=dark
 "colorscheme solarized8_flat
-colorscheme base16-default-dark
-
-" Snippets plugin here :D
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
+"colorscheme base16-default-dark
 
 "hortcuts for moving between tabs.
-" Alt-j to move to the tab to the left
-noremap <A-j> gT
-" Alt-k to move to the tab to the right
-noremap <A-k> gt
+"nmap <C-h> <C-w>h
+"nmap <C-j> <C-w>j
+"nmap <C-k> <C-w>k
+"nmap <C-l> <C-w>l
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 "PERSONAL SETTINGS
 "the backspace bug fix
@@ -249,7 +255,6 @@ endif
 map <Leader>a :Ack<Space>
 
 "Vue.js support
-Plugin 'posva/vim-vue'
 autocmd FileType vue syntax sync fromstart
 
 "ctrlP plugin settings
@@ -313,3 +318,19 @@ noremap <Leader>P "+p
 
 "ctags (may need to install ctags firts)
 command! MakeTags !ctags -R ~/sites/petshop/nodejs/Js-client
+
+"Side search settings
+" How should we execute the search?
+" --heading and --stats are required!
+let g:side_search_prg = 'ag --word-regexp'
+  \. " --ignore='*.js.map'"
+  \. " --heading --stats -B 1 -A 4"
+
+" Can use `vnew` or `new`
+let g:side_search_splitter = 'vnew'
+
+" I like 40% splits, change it if you don't
+let g:side_search_split_pct = 0.4
+
+" SideSearch current word and return to original window
+nnoremap <Leader>ss :SideSearch '
