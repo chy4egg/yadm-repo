@@ -28,11 +28,11 @@ Plugin 'bling/vim-airline'
 Plugin 'ervandew/supertab'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'nathanaelkane/vim-indent-guides'
+"Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'godlygeek/tabular'
 Plugin 'MatlabFilesEdition'
 Plugin 'chriskempson/base16-vim'
-Plugin 'Yggdroot/indentLine'
+"Plugin 'Yggdroot/indentLine'
 Plugin 'mileszs/ack.vim'
 Plugin 'posva/vim-vue'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -131,8 +131,9 @@ filetype plugin on          "required
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black ctermbg=black
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=black ctermbg=black
 "autocmd VimEnter * :IndentGuidesEnable
-let g:indentLine_leadingSpaceChar = '·'
-let g:indentLine_leadingSpaceEnabled = 1
+
+"let g:indentLine_leadingSpaceChar = '·'
+"let g:indentLine_leadingSpaceEnabled = 1
 
 " statusline
 set laststatus=2
@@ -191,7 +192,7 @@ autocmd VimEnter * call AirlineInit()
 " autocmd vimenter * NERDTree
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-:let g:NERDTreeWinSize=60
+:let g:NERDTreeWinSize=50
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary")
 "map <C-n> :NERDTreeToggle<CR>
 
@@ -322,3 +323,9 @@ nnoremap <Leader>st :CtrlSFToggle<CR>
 
 "surround vim map
 nnoremap <Leader>s ysiw
+
+"set relative line numbers
+"set relativenumber
+"set number
+
+nnoremap <Leader>5 :vertical resize 50<CR>
