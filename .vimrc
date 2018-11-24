@@ -14,6 +14,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugins to be managed by Vundle
 " ----------------------------------------------------------
+" Plugin 'scrooloose/syntastic'
 Plugin 'edkolev/promptline.vim'
 Plugin 'tomasr/molokai'
 Plugin 'scrooloose/nerdtree'
@@ -26,7 +27,6 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'bling/vim-airline'
 Plugin 'ervandew/supertab'
 Plugin 'Raimondi/delimitMate'
-" Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'godlygeek/tabular'
@@ -34,15 +34,16 @@ Plugin 'MatlabFilesEdition'
 Plugin 'chriskempson/base16-vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'mileszs/ack.vim'
-"Plugin 'mhinz/vim-grepper'
 Plugin 'posva/vim-vue'
-
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'mattn/emmet-vim'
-Plugin 'ddrscott/vim-side-search'
+Plugin 'sickill/vim-pasta'
+Plugin 'dyng/ctrlsf.vim'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'vim-scripts/ZoomWin'
 " ------------------------------------------------------------
 "
 " All of your Plugins must be added before the following line
@@ -59,7 +60,6 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
 
 " set UTF-8 encoding
 set enc=utf-8
@@ -96,7 +96,7 @@ set showcmd			"display incomplete command in the lower right corner of the conso
 set undolevels=1000	"let vim allow 1000 undos
 set textwidth=80
 " do not work in hammer. Uncomment for those not on hammer server
-set colorcolumn=80
+set colorcolumn=120
 highlight ColorColumn ctermbg=236
 
 "Searching
@@ -131,6 +131,8 @@ filetype plugin on          "required
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black ctermbg=black
 "autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=black ctermbg=black
 "autocmd VimEnter * :IndentGuidesEnable
+let g:indentLine_leadingSpaceChar = '·'
+let g:indentLine_leadingSpaceEnabled = 1
 
 " statusline
 set laststatus=2
@@ -199,18 +201,22 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown    " *.md support
 "spelling
 "map <C-a> :set spell! <CR>
 :nnoremap <C-a> :set spell!<CR>
+"remap the leader
+let mapleader = ","
 
 " automatic Whitespace removal
 autocmd VimEnter,BufReadPost,bufwritepost,bufenter * :FixWhitespace
 
 " malokai theme
-let g:molokai_original = 1
-let g:rehash256 = 1
-colorscheme molokai
+"let g:molokai_original = 1
+"let g:rehash256 = 1
+"colorscheme molokai
 
 " solarized8 theme (https://github.com/lifepillar/vim-solarized8)
-"set background=dark
-"colorscheme solarized8_flat
+set background=dark
+colorscheme solarized8_flat
+"set default terminal background color
+:set termguicolors
 "colorscheme base16-default-dark
 
 "hortcuts for moving between tabs.
@@ -257,22 +263,9 @@ map <Leader>a :Ack<Space>
 "Vue.js support
 autocmd FileType vue syntax sync fromstart
 
-"ctrlP plugin settings
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-"options:
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\v[\/]\.(git|node_modules|cache|build|hg|svn)$',
-            \ 'file': '\v\.(exe|so|dll)$',
-            \ 'link': 'node_modules',
-            \ }
 
 "Ack.vim
 :nnoremap <C-a> :Ack <CR>
@@ -310,7 +303,10 @@ autocmd FileType vue setlocal shiftwidth=4 tabstop=4
 autocmd FileType html       setlocal shiftwidth=4 tabstop=4
 
 "set clipboard to unnamed
-set clipboard=unnamedplus
+"for macos
+set clipboard=unnamed
+"for linux:
+"set clipboard=unnamedplus
 noremap <Leader>y "*y
 noremap <Leader>p "*p
 noremap <Leader>Y "+y
@@ -319,18 +315,10 @@ noremap <Leader>P "+p
 "ctags (may need to install ctags firts)
 command! MakeTags !ctags -R ~/sites/petshop/nodejs/Js-client
 
-"Side search settings
-" How should we execute the search?
-" --heading and --stats are required!
-let g:side_search_prg = 'ag --word-regexp'
-  \. " --ignore='*.js.map'"
-  \. " --heading --stats -B 1 -A 4"
+" Ctrlsf remap
+nnoremap <Leader>sf :CtrlSF -I -ignoredir "node_modules" -ignoredir "logs" -ignoredir "build" -ignoredir "app" -ignoredir "Venik.ru" '
 
-" Can use `vnew` or `new`
-let g:side_search_splitter = 'vnew'
+nnoremap <Leader>st :CtrlSFToggle<CR>
 
-" I like 40% splits, change it if you don't
-let g:side_search_split_pct = 0.4
-
-" SideSearch current word and return to original window
-nnoremap <Leader>ss :SideSearch '
+"surround vim map
+nnoremap <Leader>s ysiw
