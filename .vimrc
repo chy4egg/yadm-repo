@@ -317,7 +317,7 @@ noremap <Leader>P "+p
 command! MakeTags !ctags -R ~/sites/petshop/nodejs/Js-client
 
 " Ctrlsf remap
-nnoremap <Leader>sf :CtrlSF -I -ignoredir "node_modules" -ignoredir "logs" -ignoredir "build" -ignoredir "app" -ignoredir "Venik.ru" '
+nnoremap <Leader>ss :CtrlSF -I -ignoredir "node_modules" -ignoredir "logs" -ignoredir "build" -ignoredir "app" -ignoredir "Venik.ru" '
 
 nnoremap <Leader>st :CtrlSFToggle<CR>
 
