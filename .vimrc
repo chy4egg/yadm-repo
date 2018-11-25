@@ -214,11 +214,11 @@ autocmd VimEnter,BufReadPost,bufwritepost,bufenter * :FixWhitespace
 "colorscheme molokai
 
 " solarized8 theme (https://github.com/lifepillar/vim-solarized8)
-set background=dark
-colorscheme solarized8_flat
+"set background=dark
+"colorscheme solarized8_flat
 "set default terminal background color
 :set termguicolors
-"colorscheme base16-default-dark
+colorscheme base16-default-dark
 
 "hortcuts for moving between tabs.
 "nmap <C-h> <C-w>h
@@ -329,3 +329,6 @@ nnoremap <Leader>s ysiw
 "set number
 
 nnoremap <Leader>5 :vertical resize 50<CR>
+
+
+:set number
