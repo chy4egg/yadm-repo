@@ -14,7 +14,8 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugins to be managed by Vundle
 " ----------------------------------------------------------
-" Plugin 'scrooloose/syntastic'
+"Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'scrooloose/syntastic'
 Plugin 'edkolev/promptline.vim'
 Plugin 'tomasr/molokai'
 Plugin 'scrooloose/nerdtree'
@@ -28,11 +29,9 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'bling/vim-airline'
 Plugin 'ervandew/supertab'
 Plugin 'Raimondi/delimitMate'
-"Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'godlygeek/tabular'
 Plugin 'MatlabFilesEdition'
 Plugin 'chriskempson/base16-vim'
-"Plugin 'Yggdroot/indentLine'
 Plugin 'mileszs/ack.vim'
 Plugin 'posva/vim-vue'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -166,27 +165,27 @@ endfunction
 autocmd VimEnter * call AirlineInit()
 
 " Syntastic settings recommended
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
-" enable all checkers on same file
-"let g:syntastic_aggregate_errors = 1
+ " enable all checkers on same file
+let g:syntastic_aggregate_errors = 1
 
-" enable syntax checkers
-"let g:syntastic_c_checkers = ['gcc']
-"let g:syntastic_cpp_checkers = ['cppcheck' , 'gcc' , 'make']
-"let g:syntastic_matlab_checkers = ['mlint']
-"let g:syntastic_markdown_checkers = ['mdl']
-"let g:syntastic_text_checkers = ['language_check' , 'atdtool']
+ " enable syntax checkers
+let g:syntastic_c_checkers = ['gcc']
+let g:syntastic_cpp_checkers = ['cppcheck' , 'gcc' , 'make']
+let g:syntastic_matlab_checkers = ['mlint']
+let g:syntastic_markdown_checkers = ['mdl']
+let g:syntastic_text_checkers = ['language_check' , 'atdtool']
 
-"let g:syntastic_cpp_compiler = 'clang++' " C++ compiler
-"let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++' " C++11 support
-"let g:syntastic_cpp_compiler_options = ' -std=c++1y' " C++14 support
+let g:syntastic_cpp_compiler = 'clang++' " C++ compiler
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++' " C++11 support
+let g:syntastic_cpp_compiler_options = ' -std=c++1y' " C++14 support
 
 "NERDTree
 " autocmd vimenter * NERDTree
@@ -238,6 +237,15 @@ set backspace=indent,eol,start
 set wildmode=full
 "exclusions:
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.pyc,/node_nodules/**,node_modules,node_modules/**/*.*,tmp/**
+set wildignore+=*.swp,*.bak
+set wildignore+=*.pyc,*.class,*.sln,*.Master,*.csproj,*.csproj.user,*.cache,*.dll,*.pdb,*.min.*
+set wildignore+=*/.git/**/*,*/.hg/**/*,*/.svn/**/*
+set wildignore+=*/min/*,*/vendor/*,*/node_modules/*,*/bower_components/*,*/temp/*,*/logs/*,*/build/*
+set wildignore+=tags,cscope.*
+set wildignore+=*.tar.*
+set wildignorecase
+set wildmode=full
+
 "nerd tree settings
 noremap <Leader>n :NERDTreeFind<CR>
 noremap <Leader>m :NERDTreeToggle<CR>
@@ -310,7 +318,7 @@ set clipboard=unnamed
 "set clipboard=unnamedplus
 noremap <Leader>y "*y
 noremap <Leader>p "*p
-noremap <Leader>Y "+y
+noremap <Leader>Y "+b
 noremap <Leader>P "+p
 
 "ctags (may need to install ctags firts)
@@ -330,5 +338,14 @@ nnoremap <Leader>s ysiw
 
 nnoremap <Leader>5 :vertical resize 50<CR>
 
-
+"Set the line numbers
 :set number
+
+" a shortcut for replace in all file
+nnoremap <Leader>r :%s/
+
+"Buffers mapping:
+nnoremap bj :bn<CR>
+nnoremap bk :bp<CR>
+nnoremap bd :bd<CR>
+nnoremap bl :ls<CR>:b
