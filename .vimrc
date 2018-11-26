@@ -15,7 +15,7 @@ Plugin 'gmarik/Vundle.vim'
 " Plugins to be managed by Vundle
 " ----------------------------------------------------------
 "Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 Plugin 'edkolev/promptline.vim'
 Plugin 'tomasr/molokai'
 Plugin 'scrooloose/nerdtree'
@@ -165,27 +165,29 @@ endfunction
 autocmd VimEnter * call AirlineInit()
 
 " Syntastic settings recommended
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
- " enable all checkers on same file
-let g:syntastic_aggregate_errors = 1
+"  " enable all checkers on same file
+" let g:syntastic_aggregate_errors = 1
 
- " enable syntax checkers
-let g:syntastic_c_checkers = ['gcc']
-let g:syntastic_cpp_checkers = ['cppcheck' , 'gcc' , 'make']
-let g:syntastic_matlab_checkers = ['mlint']
-let g:syntastic_markdown_checkers = ['mdl']
-let g:syntastic_text_checkers = ['language_check' , 'atdtool']
+"  " enable syntax checkers
+" let g:syntastic_c_checkers = ['gcc']
+" let g:syntastic_cpp_checkers = ['cppcheck' , 'gcc' , 'make']
+" let g:syntastic_matlab_checkers = ['mlint']
+" let g:syntastic_markdown_checkers = ['mdl']
+" let g:syntastic_text_checkers = ['language_check' , 'atdtool']
 
-let g:syntastic_cpp_compiler = 'clang++' " C++ compiler
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++' " C++11 support
-let g:syntastic_cpp_compiler_options = ' -std=c++1y' " C++14 support
+" let g:syntastic_cpp_compiler = 'clang++' " C++ compiler
+" let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++' " C++11 support
+" let g:syntastic_cpp_compiler_options = ' -std=c++1y' " C++14 support
+
+" let g:syntastic_vue_checkers = ['eslint']
 
 "NERDTree
 " autocmd vimenter * NERDTree
