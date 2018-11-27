@@ -14,9 +14,9 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugins to be managed by Vundle
 " ----------------------------------------------------------
-" Plugin 'nathanaelkane/vim-indent-guides'
-" Plugin 'scrooloose/syntastic'
-" Plugin 'sekel/vim-vue-syntastic'
+" Plugin 'vim-syntastic/syntastic'
+Plugin 'garbas/vim-snipmate'
+Plugin 'pangloss/vim-javascript'
 Plugin 'edkolev/promptline.vim'
 Plugin 'tomasr/molokai'
 Plugin 'scrooloose/nerdtree'
@@ -37,13 +37,14 @@ Plugin 'mileszs/ack.vim'
 Plugin 'posva/vim-vue'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'mattn/emmet-vim'
 Plugin 'sickill/vim-pasta'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-scripts/ZoomWin'
+Plugin 'Yggdroot/indentLine'
+Plugin 'morhetz/gruvbox'
 " ------------------------------------------------------------
 "
 " All of your Plugins must be added before the following line
@@ -115,7 +116,7 @@ set foldmethod=indent "set fold based on indentation
 set mouse=a				     "mouse support in console (option + mouseclick for mac users)
 set mousehide				 "hide cursor when typing
 set scrolloff=5		         "minimum lines to keep above and below
-set ttymouse=xterm2
+" set ttymouse=xterm2
 
 "instant markdown
 filetype plugin on          "required
@@ -165,42 +166,6 @@ function! AirlineInit()
 endfunction
 autocmd VimEnter * call AirlineInit()
 
-" Syntastic settings recommended
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-
-" " enable all checkers on same file
-"let g:syntastic_aggregate_errors = 1
-
-" " enable syntax checkers
-"let g:syntastic_c_checkers = ['gcc']
-"let g:syntastic_cpp_checkers = ['cppcheck' , 'gcc' , 'make']
-"let g:syntastic_matlab_checkers = ['mlint']
-"let g:syntastic_markdown_checkers = ['mdl']
-"let g:syntastic_text_checkers = ['language_check' , 'atdtool']
-
-"let g:syntastic_cpp_compiler = 'clang++' " C++ compiler
-"let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++' " C++11 support
-"let g:syntastic_cpp_compiler_options = ' -std=c++1y' " C++14 support
-
-""vue js checkers
-"let g:syntastic_javascript_checkers = ['eslint']
-"let g:syntastic_vue_checkers = ['eslint']
-"let g:syntastic_mvue_checkers = ['eslint']
-"let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
-"if matchstr(local_eslint, "^\/\\w") == ''
-"    let local_eslint = getcwd() . "/" . local_eslint
-"endif
-"if executable(local_eslint)
-"    let g:syntastic_javascript_eslint_exec = local_eslint
-"    let g:syntastic_vue_eslint_exec = local_eslint
-"endif
-
 "NERDTree
 " autocmd vimenter * NERDTree
 "autocmd StdinReadPre * let s:std_in=1
@@ -227,11 +192,12 @@ autocmd VimEnter,BufReadPost,bufwritepost,bufenter * :FixWhitespace
 "colorscheme molokai
 
 " solarized8 theme (https://github.com/lifepillar/vim-solarized8)
-"set background=dark
+set background=dark
 "colorscheme solarized8_flat
 "set default terminal background color
 :set termguicolors
-colorscheme base16-default-dark
+" colorscheme base16-default-dark
+colorscheme gruvbox
 
 "hortcuts for moving between tabs.
 "nmap <C-h> <C-w>h
@@ -365,3 +331,9 @@ nnoremap bd :bd<CR>
 nnoremap bl :ls<CR>:b
 "removes all buffers but current. Type e# after end press enter
 nnoremap bc :%bd|
+
+"indent line plugin settings
+let g:indentLine_enabled = 0
+let g:indentLine_leadingSpaceChar = '·'
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_color_term = 999
