@@ -351,3 +351,5 @@ nnoremap bj :bn<CR>
 nnoremap bk :bp<CR>
 nnoremap bd :bd<CR>
 nnoremap bl :ls<CR>:b
+"removes all buffers but current. Type e# after end press enter
+nnoremap bc :%bd|
