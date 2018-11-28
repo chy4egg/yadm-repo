@@ -305,7 +305,11 @@ noremap <Leader>P "+p
 command! MakeTags !ctags -R ~/sites/petshop/nodejs/Js-client
 
 " Ctrlsf remap
-nnoremap <Leader>ss :CtrlSF -I -ignoredir "node_modules" -ignoredir "logs" -ignoredir "build" -ignoredir "app" -ignoredir "Venik.ru" '
+" nnoremap <Leader>ss :CtrlSF -I -ignoredir "node_modules" -ignoredir "logs" -ignoredir "build" -ignoredir "app" -ignoredir "Venik.ru" -filetype js
+nnoremap <Leader>ss :CtrlSF -I -ignorecase '
+nnoremap <Leader>sj :CtrlSF -I -ignorecase -filetype js '
+nnoremap <Leader>sp :CtrlSF -I -ignorecase -filetype php '
+nnoremap <Leader>sl :CtrlSF -I -ignorecase -filetype less '
 
 nnoremap <Leader>st :CtrlSFToggle<CR>
 
@@ -337,3 +341,8 @@ let g:indentLine_enabled = 0
 let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_color_term = 999
+
+"tabs workflow
+nnoremap tp       :tabprevious<CR>
+nnoremap tn       :tabnext<CR>
+nnoremap tt       :tabnew<CR>
