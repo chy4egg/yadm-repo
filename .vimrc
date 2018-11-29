@@ -43,8 +43,8 @@ Plugin 'sickill/vim-pasta'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-scripts/ZoomWin'
-Plugin 'Yggdroot/indentLine'
 Plugin 'morhetz/gruvbox'
+" Plugin 'Yggdroot/indentLine'
 " ------------------------------------------------------------
 "
 " All of your Plugins must be added before the following line
@@ -245,9 +245,11 @@ set rtp+=~/.fzf
 :nnoremap <Leader>t :GFiles<CR>
 "change the default searcher to the silver searcher
 if executable('ag')
-    let g:ackprg = 'ag -i --ignore-case --nogroup --nocolor --column --ignore venik.ru'
+    let g:ackprg = 'ag -i --ignore-case --nogroup --nocolor --column --ignore node_modules --ignore cache'
 endif
-map <Leader>a :Ack<Space>
+" map <Leader>a :Ack<Space>
+map <Leader>a :tab split<CR>:Ack '
+map <Leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 
 "Vue.js support
 autocmd FileType vue syntax sync fromstart
@@ -305,7 +307,7 @@ noremap <Leader>P "+p
 command! MakeTags !ctags -R ~/sites/petshop/nodejs/Js-client
 
 " Ctrlsf remap
-" nnoremap <Leader>ss :CtrlSF -I -ignoredir "node_modules" -ignoredir "logs" -ignoredir "build" -ignoredir "app" -ignoredir "Venik.ru" -filetype js
+" nnoremap <Leader>SS :CtrlSF -I -ignoredir "node_modules" -ignoredir "logs" -ignoredir "build" -ignoredir "app" -ignoredir "Venik.ru" -filetype js
 nnoremap <Leader>ss :CtrlSF -I -ignorecase '
 nnoremap <Leader>sj :CtrlSF -I -ignorecase -filetype js '
 nnoremap <Leader>sp :CtrlSF -I -ignorecase -filetype php '
@@ -337,12 +339,13 @@ nnoremap bl :ls<CR>:b
 nnoremap bc :%bd|
 
 "indent line plugin settings
-let g:indentLine_enabled = 0
-let g:indentLine_leadingSpaceChar = '·'
-let g:indentLine_leadingSpaceEnabled = 1
-let g:indentLine_color_term = 999
+" let g:indentLine_enabled = 0
+" let g:indentLine_leadingSpaceChar = '·'
+" let g:indentLine_leadingSpaceEnabled = 1
+" let g:indentLine_color_term = 999
 
 "tabs workflow
 nnoremap tp       :tabprevious<CR>
 nnoremap tn       :tabnext<CR>
 nnoremap tt       :tabnew<CR>
+nnoremap tc       :tabclose<CR>
