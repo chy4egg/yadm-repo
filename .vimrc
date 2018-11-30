@@ -43,8 +43,7 @@ Plugin 'sickill/vim-pasta'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-scripts/ZoomWin'
-Plugin 'morhetz/gruvbox'
-" Plugin 'Yggdroot/indentLine'
+" Plugin 'morhetz/gruvbox'
 " ------------------------------------------------------------
 "
 " All of your Plugins must be added before the following line
@@ -122,19 +121,10 @@ set scrolloff=5		         "minimum lines to keep above and below
 filetype plugin on          "required
 
 "rainbow parens
-"au VimEnter * RainbowParenthesesToggle
-"au Syntax * RainbowParenthesesLoadRound
-"au Syntax * RainbowParenthesesLoadSquare
-"au Syntax * RainbowParenthesesLoadBraces
-
-"indenting
-"let g:indent_guides_auto_colors = 0
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black ctermbg=black
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=black ctermbg=black
-"autocmd VimEnter * :IndentGuidesEnable
-
-"let g:indentLine_leadingSpaceChar = '·'
-"let g:indentLine_leadingSpaceEnabled = 1
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 " statusline
 set laststatus=2
@@ -189,23 +179,16 @@ autocmd VimEnter,BufReadPost,bufwritepost,bufenter * :FixWhitespace
 
 " set default terminal background color
 set background=dark
-set t_Co=256
 " set termguicolors
 
 " malokai theme
-" let g:molokai_original = 1
-" let g:rehash256 = 1
-" colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
+colorscheme molokai
 
 " colorscheme solarized8_flat
 " colorscheme gruvbox
-colorscheme base16-default-dark
-
-"hortcuts for moving between tabs.
-"nmap <C-h> <C-w>h
-"nmap <C-j> <C-w>j
-"nmap <C-k> <C-w>k
-"nmap <C-l> <C-w>l
+" colorscheme base16-default-dark
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -309,42 +292,19 @@ noremap <Leader>P "+p
 command! MakeTags !ctags -R ~/sites/petshop/nodejs/Js-client
 
 " Ctrlsf remap
-" nnoremap <Leader>SS :CtrlSF -I -ignoredir "node_modules" -ignoredir "logs" -ignoredir "build" -ignoredir "app" -ignoredir "Venik.ru" -filetype js
 nnoremap <Leader>ss :CtrlSF -I -ignorecase -ignoredir "node_modules" -ignoredir "logs" -ignoredir "build" -ignoredir "app" -ignoredir "Venik.ru" '
 
 nnoremap <Leader>st :CtrlSFToggle<CR>
-
-"surround vim map
-nnoremap <Leader>s ysiw
-
-"set relative line numbers
-"set relativenumber
-"set number
-
 nnoremap <Leader>5 :vertical resize 50<CR>
 
 "Set the line numbers
-:set number
+set number
 
-" a shortcut for replace in all file
+" a shortcut for replace all matches in a file
 nnoremap <Leader>r :%s/
 
-"Buffers mapping:
-nnoremap bj :bn<CR>
-nnoremap bk :bp<CR>
-nnoremap bd :bd<CR>
-nnoremap bl :ls<CR>:b
-"removes all buffers but current. Type e# after end press enter
-nnoremap bc :%bd|
-
-"indent line plugin settings
-" let g:indentLine_enabled = 0
-" let g:indentLine_leadingSpaceChar = '·'
-" let g:indentLine_leadingSpaceEnabled = 1
-" let g:indentLine_color_term = 999
-
-"tabs workflow
-nnoremap tp       :tabprevious<CR>
-nnoremap tn       :tabnext<CR>
+"tabs mapping
+nnoremap tj       :tabprevious<CR>
+nnoremap tk       :tabnext<CR>
 nnoremap tt       :tabnew<CR>
 nnoremap tc       :tabclose<CR>
