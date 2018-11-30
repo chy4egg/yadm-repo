@@ -186,18 +186,20 @@ let mapleader = ","
 " automatic Whitespace removal
 autocmd VimEnter,BufReadPost,bufwritepost,bufenter * :FixWhitespace
 
-" malokai theme
-"let g:molokai_original = 1
-"let g:rehash256 = 1
-"colorscheme molokai
 
-" solarized8 theme (https://github.com/lifepillar/vim-solarized8)
+" set default terminal background color
 set background=dark
-"colorscheme solarized8_flat
-"set default terminal background color
-:set termguicolors
-" colorscheme base16-default-dark
-colorscheme gruvbox
+set t_Co=256
+" set termguicolors
+
+" malokai theme
+" let g:molokai_original = 1
+" let g:rehash256 = 1
+" colorscheme molokai
+
+" colorscheme solarized8_flat
+" colorscheme gruvbox
+colorscheme base16-default-dark
 
 "hortcuts for moving between tabs.
 "nmap <C-h> <C-w>h
@@ -248,8 +250,8 @@ if executable('ag')
     let g:ackprg = 'ag -i --ignore-case --nogroup --nocolor --column --ignore node_modules --ignore cache'
 endif
 " map <Leader>a :Ack<Space>
-map <Leader>a :tab split<CR>:Ack '
-map <Leader>A :tab split<CR>:Ack <C-r><C-w><CR>
+map <Leader>a :tab split<CR>:Ack -ignoredir "node_modules" -ignoredir "logs" -ignoredir "build" -ignoredir "app" -ignoredir "Venik.ru" '
+map <Leader>A :tab split<CR>:Ack -ignoredir "node_modules" -ignoredir "logs" -ignoredir "build" -ignoredir "app" -ignoredir "Venik.ru"<C-r><C-w><CR>
 
 "Vue.js support
 autocmd FileType vue syntax sync fromstart
@@ -308,10 +310,7 @@ command! MakeTags !ctags -R ~/sites/petshop/nodejs/Js-client
 
 " Ctrlsf remap
 " nnoremap <Leader>SS :CtrlSF -I -ignoredir "node_modules" -ignoredir "logs" -ignoredir "build" -ignoredir "app" -ignoredir "Venik.ru" -filetype js
-nnoremap <Leader>ss :CtrlSF -I -ignorecase '
-nnoremap <Leader>sj :CtrlSF -I -ignorecase -filetype js '
-nnoremap <Leader>sp :CtrlSF -I -ignorecase -filetype php '
-nnoremap <Leader>sl :CtrlSF -I -ignorecase -filetype less '
+nnoremap <Leader>ss :CtrlSF -I -ignorecase -ignoredir "node_modules" -ignoredir "logs" -ignoredir "build" -ignoredir "app" -ignoredir "Venik.ru" '
 
 nnoremap <Leader>st :CtrlSFToggle<CR>
 
