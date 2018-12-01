@@ -2,6 +2,7 @@
 autocmd! bufwritepost .vimrc source %
 set nocompatible              " be iMproved, required
 filetype on                   " required
+set path+=**
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -230,11 +231,11 @@ set rtp+=~/.fzf
 :nnoremap <Leader>t :GFiles<CR>
 "change the default searcher to the silver searcher
 if executable('ag')
-    let g:ackprg = 'ag -i --ignore-case --nogroup --nocolor --column --ignore node_modules --ignore cache'
+    let g:ackprg = 'ag -i --ignore-case --nogroup --nocolor --column'
 endif
 " map <Leader>a :Ack<Space>
-map <Leader>a :tab split<CR>:Ack -ignoredir "node_modules" -ignoredir "logs" -ignoredir "build" -ignoredir "app" -ignoredir "Venik.ru" '
-map <Leader>A :tab split<CR>:Ack -ignoredir "node_modules" -ignoredir "logs" -ignoredir "build" -ignoredir "app" -ignoredir "Venik.ru"<C-r><C-w><CR>
+map <Leader>a :tab split<CR>:Ack '
+map <Leader>A :tab split<CR>:Ack '
 
 "Vue.js support
 autocmd FileType vue syntax sync fromstart
@@ -244,7 +245,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 "Ack.vim
-:nnoremap <C-a> :Ack <CR>
+:nnoremap <Leader>A :Ack <CR>
 
 "WIM-PLUG
 call plug#begin('~/.vim/plugged')
@@ -288,13 +289,10 @@ noremap <Leader>p "*p
 noremap <Leader>Y "+b
 noremap <Leader>P "+p
 
-"ctags (may need to install ctags firts)
-command! MakeTags !ctags -R ~/sites/petshop/nodejs/Js-client
-
 " Ctrlsf remap
-nnoremap <Leader>ss :CtrlSF -I -ignorecase -ignoredir "node_modules" -ignoredir "logs" -ignoredir "build" -ignoredir "app" -ignoredir "Venik.ru" '
-
+nnoremap <Leader>ss :CtrlSF '
 nnoremap <Leader>st :CtrlSFToggle<CR>
+
 nnoremap <Leader>5 :vertical resize 50<CR>
 
 "Set the line numbers
@@ -304,7 +302,10 @@ set number
 nnoremap <Leader>r :%s/
 
 "tabs mapping
-nnoremap tj       :tabprevious<CR>
-nnoremap tk       :tabnext<CR>
+nnoremap tp       :tabprevious<CR>
+nnoremap tn       :tabnext<CR>
 nnoremap tt       :tabnew<CR>
 nnoremap tc       :tabclose<CR>
+
+"remapping
+nnoremap <Space> A
