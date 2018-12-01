@@ -19,7 +19,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'pangloss/vim-javascript'
 Plugin 'edkolev/promptline.vim'
-Plugin 'tomasr/molokai'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-fugitive'
@@ -44,7 +43,6 @@ Plugin 'sickill/vim-pasta'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-scripts/ZoomWin'
-" Plugin 'morhetz/gruvbox'
 " ------------------------------------------------------------
 "
 " All of your Plugins must be added before the following line
@@ -161,7 +159,7 @@ autocmd VimEnter * call AirlineInit()
 " autocmd vimenter * NERDTree
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-:let g:NERDTreeWinSize=50
+let g:NERDTreeWinSize=50
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary")
 "map <C-n> :NERDTreeToggle<CR>
 
@@ -180,15 +178,13 @@ autocmd VimEnter,BufReadPost,bufwritepost,bufenter * :FixWhitespace
 
 " set default terminal background color
 set background=dark
-" set termguicolors
+" set the colorscheme
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
-" malokai theme
-" let g:molokai_original = 1
-" let g:rehash256 = 1
-" colorscheme molokai
-
-colorscheme solarized8_flat
-
+"pane navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -222,11 +218,11 @@ augroup HiglightTODO
 augroup END
 
 "fuzzy finder config
-
 " If installed using git
 set rtp+=~/.fzf
-"Fuzzy remap
-:nnoremap <Leader>t :GFiles<CR>
+" :nnoremap <Leader>t :GFiles<CR>
+:nnoremap <Leader>t :Files<CR>
+
 "change the default searcher to the silver searcher
 if executable('ag')
     let g:ackprg = 'ag -i --ignore-case --nogroup --nocolor --column'
@@ -238,36 +234,26 @@ map <Leader>A :tab split<CR>:Ack '
 "Vue.js support
 autocmd FileType vue syntax sync fromstart
 
-
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
-"Ack.vim
-:nnoremap <Leader>A :Ack <CR>
-
 "WIM-PLUG
 call plug#begin('~/.vim/plugged')
-
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
 call plug#end()
 
-" my filetype file
+" custom filetypes
 autocmd BufRead,BufNewFile *.mvue set filetype=vue
 autocmd BufRead,BufNewFile *.twig set filetype=html
-
 
 " Swap files. Generally things are in version control
 " don't use backupfiles either.
 set noswapfile
 set nobackup
 set nowritebackup
-
-" Clear search highlighting
-map <Leader>cc <Plug>NERDCommenterToggle('n', 'Toggle')<Cr>
 
 "Filetypes settings:
 set tabstop=2
@@ -305,5 +291,5 @@ nnoremap tn       :tabnext<CR>
 nnoremap tt       :tabnew<CR>
 nnoremap tc       :tabclose<CR>
 
-"remapping
+"remapping default space
 nnoremap <Space> A

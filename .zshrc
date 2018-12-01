@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/dev4/.oh-my-zsh
+  export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -89,13 +89,28 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-alias vi='vimx'
-alias vim='vimx'
 
-alias zshconfig="vimx ~/.zshrc"
-alias vimconfig="vimx ~/.vimrc"
-alias ohmyzsh="vimx ~/.oh-my-zsh"
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+# Example aliases
+alias zshconfig="vim ~/.zshrc"
+alias tmuxconfig="vim ~/.tmux.conf"
+alias vimconfig="vim ~/.vimrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
 
 alias ps="cd ~/sites/petshop/"
+alias pro="cd ~/projects/"
+alias root="cd ~/"
+alias down="cd ~/Downloads"
 alias ag='ag -i --ignore-case --nogroup --nocolor --column'
+
+#makes neovim work in english
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+alias jtags="ctags -R . && sed -i '' -E '/^(if|switch|function|module\.exports|it|describe).+language:js$/d' tags"
+
