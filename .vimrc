@@ -44,7 +44,7 @@ Plugin 'sickill/vim-pasta'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-scripts/ZoomWin'
-" Plugin 'morhetz/gruvbox'
+Plugin 'morhetz/gruvbox'
 " ------------------------------------------------------------
 "
 " All of your Plugins must be added before the following line
@@ -187,8 +187,8 @@ set background=dark
 " let g:rehash256 = 1
 " colorscheme molokai
 
-colorscheme solarized8_flat
-" colorscheme gruvbox
+" colorscheme solarized8_flat
+colorscheme gruvbox
 " colorscheme base16-default-dark
 
 nnoremap <C-J> <C-W><C-J>
@@ -272,12 +272,12 @@ set nowritebackup
 map <Leader>cc <Plug>NERDCommenterToggle('n', 'Toggle')<Cr>
 
 "Filetypes settings:
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
-autocmd FileType javascript setlocal shiftwidth=4 tabstop=4
-autocmd FileType vue setlocal shiftwidth=4 tabstop=4
-autocmd FileType html       setlocal shiftwidth=4 tabstop=4
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType vue setlocal shiftwidth=2 tabstop=2
+autocmd FileType html       setlocal shiftwidth=2 tabstop=2
 
 "set clipboard to unnamed
 "for macos
