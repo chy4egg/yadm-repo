@@ -44,7 +44,7 @@ Plugin 'sickill/vim-pasta'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-scripts/ZoomWin'
-Plugin 'morhetz/gruvbox'
+" Plugin 'morhetz/gruvbox'
 " ------------------------------------------------------------
 "
 " All of your Plugins must be added before the following line
@@ -187,9 +187,7 @@ set background=dark
 " let g:rehash256 = 1
 " colorscheme molokai
 
-" colorscheme solarized8_flat
-colorscheme gruvbox
-" colorscheme base16-default-dark
+colorscheme solarized8_flat
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
