@@ -183,11 +183,11 @@ set background=dark
 " set termguicolors
 
 " malokai theme
-let g:molokai_original = 1
-let g:rehash256 = 1
-colorscheme molokai
+" let g:molokai_original = 1
+" let g:rehash256 = 1
+" colorscheme molokai
 
-" colorscheme solarized8_flat
+colorscheme solarized8_flat
 " colorscheme gruvbox
 " colorscheme base16-default-dark
 
