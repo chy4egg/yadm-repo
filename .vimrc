@@ -43,6 +43,7 @@ Plugin 'sickill/vim-pasta'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-scripts/ZoomWin'
+Plugin 'airblade/vim-gitgutter'
 " ------------------------------------------------------------
 "
 " All of your Plugins must be added before the following line
@@ -293,3 +294,6 @@ nnoremap tc       :tabclose<CR>
 
 "remapping default space
 nnoremap <Space> A
+
+"Git Gutter Plugin Mapping
+nnoremap <Leader>gg :GitGutterToggle<CR>
