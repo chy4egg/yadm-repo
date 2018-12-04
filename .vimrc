@@ -1,70 +1,68 @@
-" auto reload .vimrc when changed, this avoids reopening vim
-autocmd! bufwritepost .vimrc source %
+" auto reload .vimrc when changed, this avoids reopening vim autocmd! bufwritepost .vimrc source %
 set nocompatible              " be iMproved, required
 filetype on                   " required
 set path+=**
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+"WIM-PLUG
+call plug#begin('~/.vim/plugged')
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
+Plug 'neomake/neomake'
+Plug 'garbas/vim-snipmate'
+Plug 'pangloss/vim-javascript'
+Plug 'edkolev/promptline.vim'
+Plug 'scrooloose/nerdtree', {'on' : 'NERDTreeToggle'}
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'suan/vim-instant-markdown'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'bling/vim-airline'
+Plug 'ervandew/supertab'
+Plug 'Raimondi/delimitMate'
+Plug 'godlygeek/tabular'
+Plug 'chriskempson/base16-vim'
+Plug 'mileszs/ack.vim'
+Plug 'posva/vim-vue'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'honza/vim-snippets'
+Plug 'mattn/emmet-vim'
+Plug 'sickill/vim-pasta'
+Plug 'dyng/ctrlsf.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'vim-scripts/ZoomWin'
+Plug 'airblade/vim-gitgutter'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+"nvim deoplete plugin
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 
-" Plugins to be managed by Vundle
-" ----------------------------------------------------------
-" Plugin 'vim-syntastic/syntastic'
-Plugin 'garbas/vim-snipmate'
-Plugin 'pangloss/vim-javascript'
-Plugin 'edkolev/promptline.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-commentary'
-Plugin 'suan/vim-instant-markdown'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'bling/vim-airline'
-Plugin 'ervandew/supertab'
-Plugin 'Raimondi/delimitMate'
-Plugin 'godlygeek/tabular'
-Plugin 'MatlabFilesEdition'
-Plugin 'chriskempson/base16-vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'posva/vim-vue'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'honza/vim-snippets'
-Plugin 'mattn/emmet-vim'
-Plugin 'sickill/vim-pasta'
-Plugin 'dyng/ctrlsf.vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'vim-scripts/ZoomWin'
-Plugin 'airblade/vim-gitgutter'
-" ------------------------------------------------------------
-"
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()
+
+"neomake settings
+let g:neomake_javascript_enabled_checkers = ['eslint']
+let g:neomake_vue_enabled_checkers = ['eslint']
+"vim-vue config
+let g:vue_disable_pre_processors=1
+
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 " set UTF-8 encoding
 set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
+
+set timeoutlen=1000 ttimeoutlen=0
 
 " disable vi compatibility (emulation of old bugs)
 set nocompatible
@@ -121,10 +119,10 @@ set scrolloff=5		         "minimum lines to keep above and below
 filetype plugin on          "required
 
 "rainbow parens
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
 
 " statusline
 set laststatus=2
@@ -220,9 +218,10 @@ augroup END
 
 "fuzzy finder config
 " If installed using git
-set rtp+=~/.fzf
+" set rtp+=~/.fzf
 " :nnoremap <Leader>t :GFiles<CR>
-:nnoremap <Leader>t :Files<CR>
+:nnoremap <Leader>T :Files<CR>
+:nnoremap <Leader>t :GFiles<CR>
 
 "change the default searcher to the silver searcher
 if executable('ag')
@@ -238,13 +237,6 @@ autocmd FileType vue syntax sync fromstart
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
-"WIM-PLUG
-call plug#begin('~/.vim/plugged')
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-call plug#end()
 
 " custom filetypes
 autocmd BufRead,BufNewFile *.mvue set filetype=vue
@@ -266,9 +258,9 @@ autocmd FileType html       setlocal shiftwidth=2 tabstop=2
 
 "set clipboard to unnamed
 "for macos
-set clipboard=unnamed
+" set clipboard=unnamed
 "for linux:
-"set clipboard=unnamedplus
+set clipboard=unnamedplus
 noremap <Leader>y "*y
 noremap <Leader>p "*p
 noremap <Leader>Y "+b
@@ -282,6 +274,7 @@ nnoremap <Leader>5 :vertical resize 50<CR>
 
 "Set the line numbers
 set number
+" set relativenumber
 
 " a shortcut for replace all matches in a file
 nnoremap <Leader>r :%s/

@@ -97,10 +97,10 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias tmuxconfig="vim ~/.tmux.conf"
-alias vimconfig="vim ~/.vimrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
+alias zshconfig="nvim ~/.zshrc"
+alias tmuxconfig="nvim ~/.tmux.conf"
+alias vimconfig="nvim ~/.vimrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
 
 alias ps="cd ~/sites/petshop/"
 alias pro="cd ~/projects/"
