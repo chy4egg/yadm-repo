@@ -33,7 +33,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Plug 'ludovicchabant/vim-gutentags'
+Plug 'w0rp/ale'
 
 "nvim deoplete plugin (requires neovim > 0.3.1 version)
 " if has('nvim')
@@ -42,6 +42,15 @@ Plug 'junegunn/fzf.vim'
 " let g:deoplete#enable_at_startup = 1
 
 call plug#end()
+
+" ale plugin settings
+let g:ale_javascript_eslint_use_global = 1
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_enter = 0
+
+let g:ale_linters = {
+  \ 'javascript': ['eslint'] ,
+  \ }
 
 "vim-vue config
 let g:vue_disable_pre_processors=1
