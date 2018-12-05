@@ -5,8 +5,6 @@ set path+=**
 
 "WIM-PLUG
 call plug#begin('~/.vim/plugged')
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
-Plug 'neomake/neomake'
 Plug 'garbas/vim-snipmate'
 Plug 'pangloss/vim-javascript'
 Plug 'edkolev/promptline.vim'
@@ -21,7 +19,6 @@ Plug 'bling/vim-airline'
 Plug 'ervandew/supertab'
 Plug 'Raimondi/delimitMate'
 Plug 'godlygeek/tabular'
-Plug 'chriskempson/base16-vim'
 Plug 'mileszs/ack.vim'
 Plug 'posva/vim-vue'
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -33,25 +30,19 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-scripts/ZoomWin'
 Plug 'airblade/vim-gitgutter'
-Plug '/usr/local/opt/fzf'
+" Plug 'chriskempson/base16-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+" Plug 'ludovicchabant/vim-gutentags'
 
-"nvim deoplete plugin
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
+"nvim deoplete plugin (requires neovim > 0.3.1 version)
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" endif
+" let g:deoplete#enable_at_startup = 1
 
 call plug#end()
 
-"neomake settings
-let g:neomake_javascript_enabled_checkers = ['eslint']
-let g:neomake_vue_enabled_checkers = ['eslint']
 "vim-vue config
 let g:vue_disable_pre_processors=1
 
@@ -106,6 +97,7 @@ set smartcase			   "smart with case search
 set foldenable	      "enable folds
 set foldlevelstart=10 "prevent too many folds
 set foldmethod=indent "set fold based on indentation
+set nofoldenable "set fold based on indentation
 "can also be marker, manual, expr, syntax, or diff
 "check :help for more information
 
@@ -290,3 +282,5 @@ nnoremap <Space> A
 
 "Git Gutter Plugin Mapping
 nnoremap <Leader>gg :GitGutterToggle<CR>
+
+nnoremap gf <C-w>gf
