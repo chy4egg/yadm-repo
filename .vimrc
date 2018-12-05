@@ -30,7 +30,7 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-scripts/ZoomWin'
 Plug 'airblade/vim-gitgutter'
-" Plug 'chriskempson/base16-vim'
+Plug 'chriskempson/base16-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Plug 'ludovicchabant/vim-gutentags'
@@ -67,9 +67,9 @@ set t_Co=256
 syntax on
 
 "tabs and spaces
-set shiftwidth=2	"1 tab == 2 spaces
-set tabstop=2		"<TAB> == 2 spaces
-set softtabstop=2	"<TAB> and backspace
+set shiftwidth=4	"1 tab == 2 spaces
+set tabstop=4		"<TAB> == 2 spaces
+set softtabstop=4	"<TAB> and backspace
 set smarttab		"smart tab
 set autoindent		"set auto indent
 set smartindent		"set smart indent
