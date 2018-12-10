@@ -74,11 +74,8 @@ set wildmenu
 set t_Co=256
 
 syntax on
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
-"tabs and spaces
-set shiftwidth=4	"1 tab == 2 spaces
-set tabstop=4		"<TAB> == 2 spaces
-set softtabstop=4	"<TAB> and backspace
 set smarttab		"smart tab
 set autoindent		"set auto indent
 set smartindent		"set smart indent
@@ -248,14 +245,6 @@ autocmd BufRead,BufNewFile *.twig set filetype=html
 set noswapfile
 set nobackup
 set nowritebackup
-
-"Filetypes settings:
-set tabstop=2
-set shiftwidth=2
-set expandtab
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-autocmd FileType vue setlocal shiftwidth=2 tabstop=2
-autocmd FileType html       setlocal shiftwidth=2 tabstop=2
 
 "set clipboard to unnamed
 "for macos
