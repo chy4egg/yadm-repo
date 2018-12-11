@@ -34,13 +34,11 @@ Plug 'chriskempson/base16-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
-
 "nvim deoplete plugin (requires neovim > 0.3.1 version)
 " if has('nvim')
 "   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " endif
 " let g:deoplete#enable_at_startup = 1
-
 call plug#end()
 
 " ale plugin settings
