@@ -62,9 +62,6 @@ set termencoding=utf-8
 
 set timeoutlen=1000 ttimeoutlen=0
 
-" disable vi compatibility (emulation of old bugs)
-set nocompatible
-
 " commenting
 set comments=sl:/*,mb:\ *,elx:\ */
 set wildmode=longest:full
