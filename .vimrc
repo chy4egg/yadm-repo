@@ -3,7 +3,7 @@ set nocompatible              " be iMproved, required
 filetype on                   " required
 set path+=**
 
-"WIM-PLUG
+"vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'garbas/vim-snipmate'
 Plug 'pangloss/vim-javascript'
@@ -33,7 +33,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
+
 "nvim deoplete plugin (requires neovim > 0.3.1 version)
 " if has('nvim')
 "   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -42,13 +43,14 @@ Plug 'w0rp/ale'
 call plug#end()
 
 " ale plugin settings
-let g:ale_javascript_eslint_use_global = 1
+
+" let g:ale_javascript_eslint_use_global = 1
 " let g:ale_lint_on_text_changed = 'never'
 " let g:ale_lint_on_enter = 0
 
-let g:ale_linters = {
-  \ 'javascript': ['eslint'] ,
-  \ }
+" let g:ale_linters = {
+"   \ 'javascript': ['eslint'] ,
+"   \ }
 
 "vim-vue config
 let g:vue_disable_pre_processors=1
