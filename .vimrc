@@ -53,15 +53,6 @@ nmap s <Plug>(easymotion-overwin-f)
 " investigate plugin settings
 nnoremap <F2> :call investigate#Investigate()<CR>
 
-" ale plugin settings
-" let g:ale_javascript_eslint_use_global = 0
-" let g:ale_lint_on_text_changed = 'never'
-" let g:ale_lint_on_enter = 0
-
-" let g:ale_linters = {
-"   \ 'javascript': ['eslint'] ,
-"   \ }
-
 "tagbar plugin settings
 nmap <F4> :TagbarToggle<CR>
 
