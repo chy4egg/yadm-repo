@@ -11,11 +11,13 @@ Plug 'edkolev/promptline.vim'
 Plug 'scrooloose/nerdtree', {'on' : 'NERDTreeToggle'}
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-fugitive'
+Plug 'christoomey/vim-conflicted',
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'suan/vim-instant-markdown'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'ervandew/supertab'
 Plug 'Raimondi/delimitMate'
 Plug 'godlygeek/tabular'
@@ -33,24 +35,35 @@ Plug 'airblade/vim-gitgutter'
 Plug 'chriskempson/base16-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Plug 'w0rp/ale'
-
+Plug 'majutsushi/tagbar'
+Plug 'mhinz/vim-startify'
+Plug 'Keithbsmiley/investigate.vim'
+Plug 'easymotion/vim-easymotion'
 "nvim deoplete plugin (requires neovim > 0.3.1 version)
-" if has('nvim')
-"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" endif
-" let g:deoplete#enable_at_startup = 1
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+endif
+let g:deoplete#enable_at_startup = 1
+
 call plug#end()
 
-" ale plugin settings
+"easymotion plugin settings
+nmap s <Plug>(easymotion-overwin-f)
 
-" let g:ale_javascript_eslint_use_global = 1
+" investigate plugin settings
+nnoremap <F2> :call investigate#Investigate()<CR>
+
+" ale plugin settings
+" let g:ale_javascript_eslint_use_global = 0
 " let g:ale_lint_on_text_changed = 'never'
 " let g:ale_lint_on_enter = 0
 
 " let g:ale_linters = {
 "   \ 'javascript': ['eslint'] ,
 "   \ }
+
+"tagbar plugin settings
+nmap <F4> :TagbarToggle<CR>
 
 "vim-vue config
 let g:vue_disable_pre_processors=1
@@ -279,3 +292,8 @@ nnoremap <Space> A
 nnoremap <Leader>gg :GitGutterToggle<CR>
 
 nnoremap gf <C-w>gf
+
+" Git conflicted remap
+" Use `gl` and `gu` rather than the default conflicted diffget mappings
+let g:diffget_local_map = 'gl'
+let g:diffget_upstream_map = 'gu'
