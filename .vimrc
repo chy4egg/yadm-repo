@@ -49,31 +49,24 @@ call plug#end()
 
 "easymotion plugin settings
 nmap s <Plug>(easymotion-overwin-f)
-
 " investigate plugin settings
 nnoremap <F2> :call investigate#Investigate()<CR>
-
 "tagbar plugin settings
 nmap <F4> :TagbarToggle<CR>
-
 "vim-vue config
 let g:vue_disable_pre_processors=1
 
 filetype plugin indent on    " required
-
 " set UTF-8 encoding
 set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
-
 set timeoutlen=1000 ttimeoutlen=0
-
 " commenting
 set comments=sl:/*,mb:\ *,elx:\ */
 set wildmode=longest:full
 set wildmenu
 set t_Co=256
-
 syntax on
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
