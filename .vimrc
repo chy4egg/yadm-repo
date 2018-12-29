@@ -8,10 +8,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'garbas/vim-snipmate'
 Plug 'pangloss/vim-javascript'
 Plug 'edkolev/promptline.vim'
-Plug 'scrooloose/nerdtree', {'on' : 'NERDTreeToggle'}
+" Plug 'scrooloose/nerdtree', {'on' : 'NERDTreeToggle'}
+Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-fugitive'
-Plug 'christoomey/vim-conflicted',
+Plug 'christoomey/vim-conflicted'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'suan/vim-instant-markdown'
@@ -36,9 +37,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
-Plug 'mhinz/vim-startify'
-Plug 'Keithbsmiley/investigate.vim'
-Plug 'easymotion/vim-easymotion'
+Plug 'rhysd/conflict-marker.vim'
 "nvim deoplete plugin (requires neovim > 0.3.1 version)
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -47,10 +46,6 @@ let g:deoplete#enable_at_startup = 1
 
 call plug#end()
 
-"easymotion plugin settings
-nmap s <Plug>(easymotion-overwin-f)
-" investigate plugin settings
-nnoremap <F2> :call investigate#Investigate()<CR>
 "tagbar plugin settings
 nmap <F4> :TagbarToggle<CR>
 "vim-vue config
@@ -217,7 +212,8 @@ augroup END
 
 "change the default searcher to the silver searcher
 if executable('ag')
-    let g:ackprg = 'ag -i --ignore-case --nogroup --nocolor --column'
+    " let g:ackprg = 'ag -i --ignore-case --nogroup --nocolor --column'
+    let g:ackprg = 'ag -i --ignore-case --nogroup --column --path-to-ignore ~/.ignore'
 endif
 " map <Leader>a :Ack<Space>
 map <Leader>a :tab split<CR>:Ack '
@@ -273,7 +269,7 @@ nnoremap tc       :tabclose<CR>
 nnoremap <Space> A
 
 "Git Gutter Plugin Mapping
-nnoremap <Leader>gg :GitGutterToggle<CR>
+nnoremap <Leader>gt :GitGutterToggle<CR>
 
 nnoremap gf <C-w>gf
 

@@ -7,7 +7,8 @@
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="afowler"
+#ZSH_THEME="afowler"
+ZSH_THEME="agnoster"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -106,7 +107,9 @@ alias ps="cd ~/sites/petshop/"
 alias pro="cd ~/projects/"
 alias root="cd ~/"
 alias down="cd ~/Downloads"
-alias ag='ag -i --ignore-case --nogroup --nocolor --column'
+# alias ag='ag -i --ignore-case --nogroup --nocolor --column'
+alias ag='ag -i --ignore-case --nogroup --column --path-to-ignore ~/.ignore'
+alias ack='ack -i --ignore-case --nogroup --column --path-to-ignore ~/.ignore'
 
 #makes neovim work in english
 export LC_ALL=en_US.UTF-8
@@ -114,5 +117,5 @@ export LANG=en_US.UTF-8
 
 alias jtags="ctags -R . && sed -i '' -E '/^(if|switch|function|module\.exports|it|describe).+language:js$/d' tags"
 
-alias conflict="!vim +Conflicted"
+alias conflict="nvim +Conflicted"
 
