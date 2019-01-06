@@ -102,6 +102,7 @@ alias zshconfig="nvim ~/.zshrc"
 alias tmuxconfig="nvim ~/.tmux.conf"
 alias vimconfig="nvim ~/.vimrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias v="nvim"
 
 alias ps="cd ~/sites/petshop/"
 alias pro="cd ~/projects/"

@@ -38,7 +38,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 Plug 'rhysd/conflict-marker.vim'
-"nvim deoplete plugin (requires neovim > 0.3.1 version)
+" Plug 'Shougo/unite.vim'
+" Plug 'Shougo/vimfiler.vim'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
@@ -46,8 +47,12 @@ let g:deoplete#enable_at_startup = 1
 
 call plug#end()
 
+" VimFiler remap
+" :nnoremap <C-f> :VimFiler<CR>
+
 "tagbar plugin settings
 nmap <F4> :TagbarToggle<CR>
+
 "vim-vue config
 let g:vue_disable_pre_processors=1
 
@@ -166,6 +171,7 @@ autocmd VimEnter,BufReadPost,bufwritepost,bufenter * :FixWhitespace
 set background=dark
 " set the colorscheme
 if filereadable(expand("~/.vimrc_background"))
+  hi Normal guibg=NONE ctermbg=NONE
   let base16colorspace=256
   source ~/.vimrc_background
 endif
