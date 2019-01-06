@@ -222,7 +222,7 @@ if executable('ag')
     let g:ackprg = 'ag -i --ignore-case --nogroup --column --path-to-ignore ~/.ignore'
 endif
 " map <Leader>a :Ack<Space>
-map <Leader>a :tab split<CR>:Ack -Q '
+map <Leader>a :Ack -Q '
 map <Leader>A :tab split<CR>:Ack -Q '
 
 "Vue.js support
