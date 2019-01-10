@@ -1,3 +1,7 @@
 source ~/.vimrc
 set surround
-set vim-multiple-cursors
+map <Leader>m :action ActivateProjectToolWindow<CR>
+map <Leader>t :action ActivateTerminalToolWindow<CR>
+map <Leader>e :action RecentFiles<CR>
+map <Leader>f :action FindInPath<CR>
+map g; :action JumpToLastChange<CR>
