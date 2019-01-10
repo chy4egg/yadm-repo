@@ -2,6 +2,7 @@
 set nocompatible              " be iMproved, required
 filetype on                   " required
 set path+=**
+set autoread
 
 "vim-plug
 call plug#begin('~/.vim/plugged')
@@ -122,7 +123,7 @@ set laststatus=2
 " airline UI
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='base16'
+" let g:airline_theme='base16'
 
 " separators
 let g:airline#extensions#tabline#left_sep = '▶'

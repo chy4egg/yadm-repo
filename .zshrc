@@ -119,4 +119,4 @@ export LANG=en_US.UTF-8
 alias jtags="ctags -R . && sed -i '' -E '/^(if|switch|function|module\.exports|it|describe).+language:js$/d' tags"
 
 alias conflict="nvim +Conflicted"
-
+alias storm="~/soft/PhpStorm/bin/phpstorm.sh"
