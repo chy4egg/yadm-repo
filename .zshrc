@@ -120,3 +120,4 @@ alias jtags="ctags -R . && sed -i '' -E '/^(if|switch|function|module\.exports|i
 
 alias conflict="nvim +Conflicted"
 alias storm="~/soft/PhpStorm/bin/phpstorm.sh"
+alias st="~/soft/sublime_text_3/sublime_text"

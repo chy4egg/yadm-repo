@@ -281,6 +281,9 @@ nnoremap <Leader>gt :GitGutterToggle<CR>
 
 nnoremap gf <C-w>gf
 
+"Emmet remap
+nnoremap <Leader>e :Emmet <right>
+
 " Git conflicted remap
 " Use `gl` and `gu` rather than the default conflicted diffget mappings
 let g:diffget_local_map = 'gl'

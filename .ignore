@@ -15,6 +15,8 @@ node_modules
 /api/bitrix/trmplates/vn
 /common/assets/cache
 /common/bitrix/cache
+/common/bitrix/templates/ps/css
+/common/bitrix/templates/ps-mobile/css
 /common/bitrix/managed_cache
 /common/bitrix/modules
 /common/bitrix/templates/.common/build
