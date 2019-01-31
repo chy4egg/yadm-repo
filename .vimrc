@@ -184,7 +184,7 @@ autocmd VimEnter,BufReadPost,bufwritepost,bufenter * :FixWhitespace
 
 
 " set default terminal background color
-set background=dark
+set background=light
 
 "disable this in case of any problems with colors in tmux
 set termguicolors
