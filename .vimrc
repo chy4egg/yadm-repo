@@ -188,11 +188,11 @@ set background=dark
 "disable this in case of any problems with colors in tmux
 " set termguicolors
 " set the colorscheme
-" if filereadable(expand("~/.vimrc_background"))
-"   hi Normal guibg=NONE ctermbg=NONE
-"   let base16colorspace=256
-"   source ~/.vimrc_background
-" endif
+if filereadable(expand("~/.vimrc_background"))
+  hi Normal guibg=NONE ctermbg=NONE
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 "pane navigation
 nnoremap <C-J> <C-W><C-J>
