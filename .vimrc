@@ -60,7 +60,7 @@ let g:ale_fixers = {
 \}
 
 "comment this if your project has it's own eslint config
-let g:ale_javascript_eslint_use_global = 1
+" let g:ale_javascript_eslint_use_global = 1
 
 " VimFiler remap
 " :nnoremap <C-f> :VimFiler<CR>
@@ -83,7 +83,7 @@ set wildmode=longest:full
 set wildmenu
 set t_Co=256
 syntax on
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
 
 set smarttab		"smart tab
 set autoindent		"set auto indent
