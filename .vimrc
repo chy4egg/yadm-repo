@@ -45,10 +45,22 @@ let g:deoplete#enable_at_startup = 1
 
 call plug#end()
 
+"ALE plugin settings
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+
 " Fix files with prettier, and then ESLint.
 let b:ale_fixers = ['prettier', 'eslint']
 " Equivalent to the above.
 let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
+
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['prettier','eslint'],
+\}
+
+"comment this if your project has it's own eslint config
+let g:ale_javascript_eslint_use_global = 1
 
 " VimFiler remap
 " :nnoremap <C-f> :VimFiler<CR>
