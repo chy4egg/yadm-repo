@@ -1,4 +1,3 @@
-" auto reload .vimrc when changed, this avoids reopening vim autocmd! bufwritepost .vimrc source %
 set nocompatible              " be iMproved, required
 filetype on                   " required
 set path+=**
@@ -38,6 +37,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 Plug 'w0rp/ale'
+Plug 'morhetz/gruvbox'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
@@ -185,14 +185,18 @@ autocmd VimEnter,BufReadPost,bufwritepost,bufenter * :FixWhitespace
 
 " set default terminal background color
 set background=dark
+
 "disable this in case of any problems with colors in tmux
-" set termguicolors
+set termguicolors
+:colorscheme gruvbox
+
 " set the colorscheme
-if filereadable(expand("~/.vimrc_background"))
-  hi Normal guibg=NONE ctermbg=NONE
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
+
+" if filereadable(expand("~/.vimrc_background"))
+"   hi Normal guibg=NONE ctermbg=NONE
+"   let base16colorspace=256
+"   source ~/.vimrc_background
+" endif
 
 "pane navigation
 nnoremap <C-J> <C-W><C-J>
@@ -307,3 +311,7 @@ let g:diffget_upstream_map = 'gu'
 
 "in 3-way diff vim-fugitive -> press ,ga to see the diff in a new tab
 nnoremap <leader>ga :tab sp \| Gvedit :1 \| windo diffthis<CR>
+
+"relative line number
+set relativenumber
+set rnu
