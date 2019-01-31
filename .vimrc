@@ -9,7 +9,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'garbas/vim-snipmate'
 Plug 'pangloss/vim-javascript'
 Plug 'edkolev/promptline.vim'
-" Plug 'scrooloose/nerdtree', {'on' : 'NERDTreeToggle'}
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-fugitive'
@@ -38,15 +37,18 @@ Plug 'chriskempson/base16-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
-Plug 'rhysd/conflict-marker.vim'
-" Plug 'Shougo/unite.vim'
-" Plug 'Shougo/vimfiler.vim'
+Plug 'w0rp/ale'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
 let g:deoplete#enable_at_startup = 1
 
 call plug#end()
+
+" Fix files with prettier, and then ESLint.
+let b:ale_fixers = ['prettier', 'eslint']
+" Equivalent to the above.
+let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
 
 " VimFiler remap
 " :nnoremap <C-f> :VimFiler<CR>
@@ -290,3 +292,6 @@ nnoremap <Leader>e :Emmet <right>
 " Use `gl` and `gu` rather than the default conflicted diffget mappings
 let g:diffget_local_map = 'gl'
 let g:diffget_upstream_map = 'gu'
+
+"in 3-way diff vim-fugitive -> press ,ga to see the diff in a new tab
+nnoremap <leader>ga :tab sp \| Gvedit :1 \| windo diffthis<CR>
