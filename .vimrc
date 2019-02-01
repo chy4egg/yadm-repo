@@ -37,6 +37,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 Plug 'w0rp/ale'
+Plug 'Yggdroot/indentLine'
 Plug 'morhetz/gruvbox'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -62,8 +63,9 @@ let g:ale_fixers = {
 "comment this if your project has it's own eslint config
 " let g:ale_javascript_eslint_use_global = 1
 
-" VimFiler remap
-" :nnoremap <C-f> :VimFiler<CR>
+"Indent line plugin settings
+" let g:indentLine_char = '┆'
+let g:indentLine_char = '▏'
 
 "tagbar plugin settings
 nmap <F4> :TagbarToggle<CR>
@@ -184,7 +186,7 @@ autocmd VimEnter,BufReadPost,bufwritepost,bufenter * :FixWhitespace
 
 
 " set default terminal background color
-set background=light
+set background=dark
 
 "disable this in case of any problems with colors in tmux
 set termguicolors
