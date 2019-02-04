@@ -37,7 +37,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 Plug 'w0rp/ale'
-Plug 'Yggdroot/indentLine'
 Plug 'morhetz/gruvbox'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -62,10 +61,6 @@ let g:ale_fixers = {
 
 "comment this if your project has it's own eslint config
 " let g:ale_javascript_eslint_use_global = 1
-
-"Indent line plugin settings
-" let g:indentLine_char = '┆'
-let g:indentLine_char = '▏'
 
 "tagbar plugin settings
 nmap <F4> :TagbarToggle<CR>
