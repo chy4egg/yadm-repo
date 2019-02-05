@@ -37,6 +37,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 Plug 'w0rp/ale'
+Plug 'morhetz/gruvbox'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
@@ -197,14 +198,14 @@ if (empty($TMUX))
   endif
 endif
 
-" :colorscheme gruvbox
+:colorscheme gruvbox
 
 " set the colorscheme
-if filereadable(expand("~/.vimrc_background"))
-  hi Normal guibg=NONE ctermbg=NONE
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
+" if filereadable(expand("~/.vimrc_background"))
+"   hi Normal guibg=NONE ctermbg=NONE
+"   let base16colorspace=256
+"   source ~/.vimrc_background
+" endif
 
 "pane navigation
 nnoremap <C-J> <C-W><C-J>
