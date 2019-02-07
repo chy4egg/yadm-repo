@@ -32,12 +32,11 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-scripts/ZoomWin'
 Plug 'airblade/vim-gitgutter'
-" Plug 'chriskempson/base16-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 Plug 'w0rp/ale'
-" Plug 'morhetz/gruvbox'
+Plug 'chriskempson/base16-vim'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
@@ -184,11 +183,11 @@ set background=dark
 " :colorscheme gruvbox
 
 " set the colorscheme
-" if filereadable(expand("~/.vimrc_background"))
-"   hi Normal guibg=NONE ctermbg=NONE
-"   let base16colorspace=256
-"   source ~/.vimrc_background
-" endif
+if filereadable(expand("~/.vimrc_background"))
+  hi Normal guibg=NONE ctermbg=NONE
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 if (empty($TMUX))
   if (has("nvim"))
@@ -217,10 +216,15 @@ if (empty($TMUX))
 endif
 
 "pane navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
+
+nnoremap <C-J> 10j
+nnoremap <C-K> 10k
+nnoremap <C-L> $
+nnoremap <C-H> ^
 
 "PERSONAL SETTINGS
 "the backspace bug fix
