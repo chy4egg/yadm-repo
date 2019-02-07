@@ -10,8 +10,8 @@ https://thelocehiliosan.github.io/yadm/docs/install
 setup:
 
 1) install dependencies:
-- zsh
-- ohmyzsh https://ohmyz.sh/
+- zsh - Mac Os command: 'chsh -s /bin/zsh'
+- ohmyzsh - https://ohmyz.sh/
 - powerline fonts pack - https://github.com/powerline/fonts
 - neovim - https://github.com/neovim/neovim/wiki/Installing-Neovim
 - base16_shell - https://github.com/chriskempson/base16-shell/
@@ -21,7 +21,7 @@ setup:
 
 2) google how to make neovim read your .vimrc config file (symlink)
 3) install VimPlug by manual: https://github.com/junegunn/vim-plug
-4) type vimconfig, skip all errors, type :PlugInstall
+4) type vimconfig, skip all errors, type: ':PlugInstall'
 
 Enjoy!
 
