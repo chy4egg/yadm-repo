@@ -17,7 +17,7 @@ setup:
 - Adobe Source Code Pro shell font
 - tmux (opt)
 
-2) google how to make neovim read your .vimrc config file (semlink)
+2) google how to make neovim read your .vimrc config file (symlink)
 3) install VimPlug by manual: https://github.com/junegunn/vim-plug
 4) type vimconfig, skip all errors, type :PlugInstall
 
