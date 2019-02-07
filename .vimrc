@@ -2,8 +2,10 @@ set nocompatible              " be iMproved, required
 filetype on                   " required
 set path+=**
 set autoread
-:nnoremap ; :
 let mapleader = ","
+:nnoremap ; :
+:nnoremap <F2> :cp<CR>
+:nnoremap <F3> :cn<CR>
 
 "vim-plug
 call plug#begin('~/.vim/plugged')
