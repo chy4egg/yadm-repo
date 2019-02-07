@@ -11,11 +11,13 @@ setup:
 
 1) install dependencies:
 - zsh
-- neovim
-- base16_shell
-- silver searcher
-- Adobe Source Code Pro shell font
-- tmux (opt)
+- ohmyzsh https://ohmyz.sh/
+- powerline fonts pack - https://github.com/powerline/fonts
+- neovim - https://github.com/neovim/neovim/wiki/Installing-Neovim
+- base16_shell - https://github.com/chriskempson/base16-shell/
+- silver searcher - https://github.com/ggreer/the_silver_searcher
+- Adobe Source Code Pro shell font - https://github.com/adobe-fonts/source-code-pro
+- tmux (opt) - brew install tmux (for Mac Os)
 
 2) google how to make neovim read your .vimrc config file (symlink)
 3) install VimPlug by manual: https://github.com/junegunn/vim-plug
