@@ -2,7 +2,7 @@ set nocompatible              " be iMproved, required
 filetype on                   " required
 set path+=**
 set autoread
-
+:nnoremap ; :
 let mapleader = ","
 
 "vim-plug
