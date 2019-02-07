@@ -3,6 +3,8 @@ filetype on                   " required
 set path+=**
 set autoread
 
+let mapleader = ","
+
 "vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'garbas/vim-snipmate'
@@ -60,6 +62,10 @@ let g:ale_fixers = {
 
 "comment this if your project has it's own eslint config
 " let g:ale_javascript_eslint_use_global = 1
+
+map <Leader>al :ALELint<CR>
+map <Leader>af :ALEFix<CR>
+map <Leader>at :ALEToggle<CR>
 
 "tagbar plugin settings
 nmap <F4> :TagbarToggle<CR>
@@ -172,8 +178,6 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown    " *.md support
 "spelling
 "map <C-a> :set spell! <CR>
 :nnoremap <C-a> :set spell!<CR>
-"remap the leader
-let mapleader = ","
 
 " automatic Whitespace removal
 autocmd VimEnter,BufReadPost,bufwritepost,bufenter * :FixWhitespace
@@ -221,8 +225,8 @@ endif
 " nnoremap <C-L> <C-W><C-L>
 " nnoremap <C-H> <C-W><C-H>
 
-nnoremap <C-J> 10j
-nnoremap <C-K> 10k
+nnoremap <C-J> 5j
+nnoremap <C-K> 5k
 nnoremap <C-L> $
 nnoremap <C-H> ^
 
