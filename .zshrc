@@ -124,4 +124,4 @@ alias st="~/soft/sublime_text_3/sublime_text"
 
 # petshop ssh starting develop script
 alias develop="~/sh_scripts/tmux_develop.sh"
-alias develop="~/sh_scripts/tmux_psv.sh"
+alias psv="~/sh_scripts/tmux_psv.sh"
