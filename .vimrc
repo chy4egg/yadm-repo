@@ -222,15 +222,10 @@ if (empty($TMUX))
 endif
 
 "pane navigation
-" nnoremap <C-J> <C-W><C-J>
-" nnoremap <C-K> <C-W><C-K>
-" nnoremap <C-L> <C-W><C-L>
-" nnoremap <C-H> <C-W><C-H>
-
-nnoremap <C-J> 5j
-nnoremap <C-K> 5k
-nnoremap <C-L> $
-nnoremap <C-H> ^
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 "PERSONAL SETTINGS
 "the backspace bug fix
