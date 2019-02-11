@@ -93,6 +93,7 @@ source $ZSH/oh-my-zsh.sh
 
 #base aliases
 alias ls="ls -la"
+alias c="clear"
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
