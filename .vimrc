@@ -53,17 +53,23 @@ let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
 
 " Fix files with prettier, and then ESLint.
-let b:ale_fixers = ['prettier', 'eslint']
+" let b:ale_fixers = ['prettier', 'eslint']
+
 " Equivalent to the above.
-let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
+let b:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['prettier','eslint'],
+\   'vue': ['prettier','eslint'],
+\}
 
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier','eslint'],
+\   'vue': ['prettier','eslint'],
 \}
 
 "comment this if your project has it's own eslint config
-" let g:ale_javascript_eslint_use_global = 1
+let g:ale_javascript_eslint_use_global = 1
 
 map <Leader>al :ALELint<CR>
 map <Leader>af :ALEFix<CR>
@@ -186,7 +192,7 @@ autocmd VimEnter,BufReadPost,bufwritepost,bufenter * :FixWhitespace
 
 " set default terminal background color
 set background=dark
-" :colorscheme gruvbox
+" :colorscheme solarized8
 
 " set the colorscheme
 if filereadable(expand("~/.vimrc_background"))
