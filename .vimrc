@@ -41,6 +41,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 Plug 'w0rp/ale'
 Plug 'chriskempson/base16-vim'
+Plug 'leafgarland/typescript-vim'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
@@ -48,29 +49,18 @@ let g:deoplete#enable_at_startup = 1
 
 call plug#end()
 
-"ALE plugin settings
+" ALE plugin settings
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
-
 " Fix files with prettier, and then ESLint.
-" let b:ale_fixers = ['prettier', 'eslint']
-
-" Equivalent to the above.
-let b:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['prettier','eslint'],
-\   'vue': ['prettier','eslint'],
-\}
-
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier','eslint'],
 \   'vue': ['prettier','eslint'],
 \}
-
-"comment this if your project has it's own eslint config
+" comment this if your project has it's own eslint config
 let g:ale_javascript_eslint_use_global = 1
-
+" mappings
 map <Leader>al :ALELint<CR>
 map <Leader>af :ALEFix<CR>
 map <Leader>at :ALEToggle<CR>
