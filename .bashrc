@@ -2,11 +2,22 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+  . /etc/bashrc
+fi
+if [ -f ~/bashrc ]; then
+  . ~/bashrc
 fi
 
-alias vim='vimx'
-alias vi='vimx'
+# User specific environment and startup programs
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+# integration with git
+export PS1="\[\e[32m\]\u@\h\[\e[0m\] \W\[\e[33m\]\$(parse_git_branch)\[\e[0m\] $ "
+
+# git-completion.bash
+. ~/bash_config/git/git-completion.bash
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
@@ -14,12 +25,12 @@ alias vi='vimx'
 # User specific aliases and functions
 
 #powerline support (uncomment, while you need the powerline fonts)
-#if [ -f `which powerline-daemon` ]; then
-#  powerline-daemon -q
-#  POWERLINE_BASH_CONTINUATION=1
-#  POWERLINE_BASH_SELECT=1
-#  . /usr/share/powerline/bash/powerline.sh
-#fi
+# if [ -f `which powerline-daemon` ]; then
+#   powerline-daemon -q
+#   POWERLINE_BASH_CONTINUATION=1
+#   POWERLINE_BASH_SELECT=1
+#   . /usr/share/powerline/bash/powerline.sh
+# fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export PATH=${PATH}:~/soft/p4v/bin
