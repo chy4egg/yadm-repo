@@ -16,9 +16,6 @@ parse_git_branch() {
 # integration with git
 export PS1="\[\e[32m\]\u@\h\[\e[0m\] \W\[\e[33m\]\$(parse_git_branch)\[\e[0m\] $ "
 
-# git-completion.bash
-. ~/bash_config/git/git-completion.bash
-
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
