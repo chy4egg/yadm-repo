@@ -55,10 +55,12 @@ let g:ale_sign_warning = '--'
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier','eslint'],
+\   'ts': ['prettier','eslint', 'tsserver'],
 \   'vue': ['prettier','eslint'],
 \}
 " comment this if your project has it's own eslint config
 let g:ale_javascript_eslint_use_global = 1
+
 " mappings
 map <Leader>al :ALELint<CR>
 map <Leader>af :ALEFix<CR>
