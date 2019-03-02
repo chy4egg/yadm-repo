@@ -103,6 +103,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 
 # Example aliases
 alias zshconfig="nvim ~/.zshrc"
+alias bashconfig="nvim ~/.bashrc"
 alias tmuxconfig="nvim ~/.tmux.conf"
 alias vimconfig="nvim ~/.vimrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
