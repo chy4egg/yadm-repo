@@ -59,7 +59,7 @@ let g:ale_fixers = {
 \   'vue': ['prettier','eslint'],
 \}
 " comment this if your project has it's own eslint config
-let g:ale_javascript_eslint_use_global = 1
+let g:ale_javascript_eslint_use_global = 0
 
 " mappings
 map <Leader>al :ALELint<CR>
