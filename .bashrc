@@ -5,9 +5,11 @@ if [ -f ~/bashrc ]; then
 fi
 
 # User specific environment and startup programs
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
+if [ "$EUID" != 0 ]; then
+  parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+  }
+fi
 
 # integration with git
 export PS1="\[\e[32m\]\u@\h\[\e[0m\] \W\[\e[33m\]\$(parse_git_branch)\[\e[0m\] $ "
