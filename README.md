@@ -12,6 +12,7 @@ setup:
 1) install dependencies:
 - zsh - Mac Os command: 'chsh -s /bin/zsh'
 - ohmyzsh - https://ohmyz.sh/
+- ohmybash (if you are using bash) sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 - powerline fonts pack - https://github.com/powerline/fonts
 - neovim - https://github.com/neovim/neovim/wiki/Installing-Neovim
 - base16_shell - https://github.com/chriskempson/base16-shell/
