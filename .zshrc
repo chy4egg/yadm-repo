@@ -109,7 +109,7 @@ alias vimconfig="nvim ~/.vimrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias v="nvim"
 
-alias ps="cd ~/sites/petshop/"
+alias ps="cd ~/domains/petshopru"
 alias pro="cd ~/projects/"
 alias root="cd ~/"
 alias down="cd ~/Downloads"
