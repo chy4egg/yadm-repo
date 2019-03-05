@@ -73,6 +73,10 @@ plugins=(
 # User settings
 source $OSH/oh-my-bash.sh
 
+if [ xset ]; then
+  xset r rate 230 50
+fi
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export PATH=${PATH}:~/soft/p4v/bin
 
@@ -107,4 +111,4 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # petshop ssh starting develop script
-alias develop="~/sh_scripts/tmux_docker_develop.sh"
+alias develop="~/sh_scripts/tmux_develop.sh"
