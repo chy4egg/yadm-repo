@@ -21,6 +21,10 @@ setup:
 - tmux (opt) - brew install tmux (for Mac Os)
 
 2) google how to make neovim read your .vimrc config file (symlink)
+`
+ln -s ../.vim ~/.config/nvim
+ln -s ../.vimrc ~/.vim/init.vim
+`
 3) install VimPlug by manual: https://github.com/junegunn/vim-plug
 4) type vimconfig, skip all errors, type: ':PlugInstall'
 
