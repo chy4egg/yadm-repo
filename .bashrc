@@ -23,7 +23,10 @@ alias tmuxconfig="nvim ~/.tmux.conf"
 alias vimconfig="nvim ~/.vimrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 
-alias v="nvim"
+alias v="vim"
+if [ "command -v nvim" ]; then
+  alias v="nvim"
+fi
 
 alias petshop="cd ~/domains/petshopru/"
 alias pro="cd ~/projects/"
