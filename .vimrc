@@ -1,3 +1,4 @@
+:set shell=/bin/bash
 set nocompatible              " be iMproved, required
 filetype on                   " required
 set path+=**
@@ -244,8 +245,8 @@ augroup END
 " If installed using git
 " set rtp+=~/.fzf
 " :nnoremap <Leader>t :GFiles<CR>
-:nnoremap <Leader>T :Files<CR>
-:nnoremap <Leader>t :GFiles<CR>
+:nnoremap <Leader>t :Files<CR>
+:nnoremap <Leader>T :GFiles<CR>
 
 "change the default searcher to the silver searcher
 if executable('ag')
