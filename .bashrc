@@ -17,16 +17,12 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
   eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # Example aliases
-alias zshconfig="nvim ~/.zshrc"
-alias bashconfig="nvim ~/.bashrc"
-alias tmuxconfig="nvim ~/.tmux.conf"
-alias vimconfig="nvim ~/.vimrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias zshconfig="vim ~/.zshrc"
+alias bashconfig="vim ~/.bashrc"
+alias tmuxconfig="vim ~/.tmux.conf"
+alias vimconfig="vim ~/.vimrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
 
-alias v="vim"
-if [ "command -v nvim" ]; then
-  alias v="nvim"
-fi
 
 alias petshop="cd ~/domains/petshopru/"
 alias pro="cd ~/projects/"
