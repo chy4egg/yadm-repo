@@ -1,5 +1,6 @@
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export PATH=${PATH}:~/soft/p4v/bin
+export PATH=/usr/local/bin:$PATH
 
 if [ "$EUID" != 0 ]; then
   parse_git_branch() {
