@@ -8,7 +8,7 @@ if [ "$EUID" != 0 ]; then
   }
 fi
 
-export PS1="\[\e[32m\]\u@\h\[\e[0m\] \W\[\e[33m\]\$(parse_git_branch)\[\e[0m\] $ "
+export PS1="\[\e[34m\]\u@\h\[\e[32m\] \W\[\e[33m\]\$(parse_git_branch)\[\e[0m\] $ "
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"

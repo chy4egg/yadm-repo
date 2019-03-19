@@ -275,10 +275,11 @@ set nobackup
 set nowritebackup
 
 "set clipboard to unnamed
-"for macos
+"macos
 " set clipboard=unnamed
-"for linux:
+"linux:
 set clipboard=unnamedplus
+
 noremap <Leader>y "*y
 noremap <Leader>p "*p
 noremap <Leader>Y "+b
