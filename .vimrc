@@ -242,11 +242,8 @@ augroup HiglightTODO
 augroup END
 
 "fuzzy finder config
-" If installed using git
-" set rtp+=~/.fzf
-" :nnoremap <Leader>t :GFiles<CR>
 :nnoremap <Leader>t :Files<CR>
-:nnoremap <Leader>T :GFiles<CR>
+:nnoremap <Leader>T :tab split<CR>:Files<CR>
 
 "change the default searcher to the silver searcher
 if executable('ag')
@@ -274,11 +271,11 @@ set noswapfile
 set nobackup
 set nowritebackup
 
-"set clipboard to unnamed
+"clipboard
 "macos
-" set clipboard=unnamed
+set clipboard=unnamed
 "linux:
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 noremap <Leader>y "*y
 noremap <Leader>p "*p
