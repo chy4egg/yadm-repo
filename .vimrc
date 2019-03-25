@@ -4,7 +4,7 @@ filetype on                   " required
 set path+=**
 set autoread
 let mapleader = ","
-:nnoremap ; :
+" :nnoremap ; :
 :nnoremap <F2> :cp<CR>
 :nnoremap <F3> :cn<CR>
 
