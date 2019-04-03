@@ -42,12 +42,18 @@ Plug 'majutsushi/tagbar'
 Plug 'w0rp/ale'
 Plug 'chriskempson/base16-vim'
 Plug 'leafgarland/typescript-vim'
+Plug 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
 let g:deoplete#enable_at_startup = 1
 
 call plug#end()
+
+" Highlight ES6 template strings
+hi link javaScriptTemplateDelim String
+hi link javaScriptTemplateVar Text
+hi link javaScriptTemplateString String
 
 " ALE plugin settings
 let g:ale_sign_error = '>>'
