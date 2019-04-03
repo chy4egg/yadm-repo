@@ -25,6 +25,8 @@ alias tmuxconfig="vim ~/.tmux.conf"
 alias vimconfig="vim ~/.vimrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
+# NeoVim shortcut
+alias v="nvim"
 
 alias petshop="cd ~/domains/petshopru/"
 alias pro="cd ~/projects/"
