@@ -276,11 +276,14 @@ set noswapfile
 set nobackup
 set nowritebackup
 
-"clipboard
-"macos
-" set clipboard=unnamed
-"linux:
-set clipboard=unnamedplus
+" Clipboard settings (linux and mac os)
+if system('uname -s') == "Darwin\n"
+  "OSX
+  set clipboard=unnamed
+else
+  "Linux
+  set clipboard=unnamedplus
+endif
 
 noremap <Leader>y "*y
 noremap <Leader>p "*p
