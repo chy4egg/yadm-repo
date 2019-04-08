@@ -13,7 +13,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'garbas/vim-snipmate'
 Plug 'pangloss/vim-javascript'
 Plug 'edkolev/promptline.vim'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
