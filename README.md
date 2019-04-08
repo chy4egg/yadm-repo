@@ -10,12 +10,15 @@ https://thelocehiliosan.github.io/yadm/docs/install
 setup:
 
 1) install dependencies:
+- zsh (`sudo chsh -s /bin/zsh`)
+- ohmyzsh - https://github.com/robbyrussell/oh-my-zsh
 - neovim - https://github.com/neovim/neovim/wiki/Installing-Neovim
 - base16_shell - https://github.com/chriskempson/base16-shell/
 - silver searcher - https://github.com/ggreer/the_silver_searcher
 - Adobe Source Code Pro shell font - https://github.com/adobe-fonts/source-code-pro
 - tmux (opt) - brew install tmux (for Mac Os)
 - powerline fonts pack (optional) - https://github.com/powerline/fonts
+- https://github.com/Wyntau/fzf-zsh - zsh fzf plugin
 
 2) make neovim read your .vimrc config file
 `
