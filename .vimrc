@@ -256,8 +256,8 @@ if executable('ag')
     let g:ackprg = 'ag -i --ignore-case --nogroup --column --path-to-ignore ~/.ignore'
 endif
 " map <Leader>a :Ack<Space>
-map <Leader>f :Ack -Q '
-map <Leader>F :tab split<CR>:Ack -Q '
+map <Leader>f :Ack -Q ''<left>
+map <Leader>F :tab split<CR>:Ack -Q ''<left>
 
 "Vue.js support
 autocmd FileType vue syntax sync fromstart
