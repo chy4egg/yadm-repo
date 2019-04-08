@@ -2,26 +2,25 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+  export ZSH="/home/dev4/.oh-my-zsh"
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="afowler"
 ZSH_THEME="agnoster"
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
@@ -49,17 +48,20 @@ ZSH_THEME="agnoster"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
@@ -89,29 +91,29 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-
-#base aliases
-alias ls="ls -la"
-alias c="clear"
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
+  [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+  eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # Example aliases
-alias zshconfig="nvim ~/.zshrc"
-alias bashconfig="nvim ~/.bashrc"
-alias tmuxconfig="nvim ~/.tmux.conf"
-alias vimconfig="nvim ~/.vimrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias zshconfig="vim ~/.zshrc"
+alias bashconfig="vim ~/.bashrc"
+alias tmuxconfig="vim ~/.tmux.conf"
+alias vimconfig="vim ~/.vimrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+
+# NeoVim shortcut
 alias v="nvim"
 
-alias ps="cd ~/domains/petshopru"
+alias petshop="cd ~/domains/petshopru/"
 alias pro="cd ~/projects/"
 alias root="cd ~/"
-alias down="cd ~/Downloads"
 # alias ag='ag -i --ignore-case --nogroup --nocolor --column'
 alias ag='ag -i --ignore-case --nogroup --column --path-to-ignore ~/.ignore'
 alias ack='ack -i --ignore-case --nogroup --column --path-to-ignore ~/.ignore'
@@ -120,12 +122,6 @@ alias ack='ack -i --ignore-case --nogroup --column --path-to-ignore ~/.ignore'
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-alias jtags="ctags -R . && sed -i '' -E '/^(if|switch|function|module\.exports|it|describe).+language:js$/d' tags"
-
-alias conflict="nvim +Conflicted"
-alias storm="~/soft/PhpStorm/bin/phpstorm.sh"
-alias st="~/soft/sublime_text_3/sublime_text"
-
 # petshop ssh starting develop script
 alias develop="~/sh_scripts/tmux_develop.sh"
-alias petshop="~/sh_scripts/tmux_psv.sh"
+
