@@ -47,7 +47,20 @@ if has('nvim')
 endif
 let g:deoplete#enable_at_startup = 1
 
+" Plug 'ddrscott/vim-side-search'
 call plug#end()
+
+" side-search settigs
+"
+" How should we execute the search?
+" let g:side_search_prg = 'ag -i --ignore-case --nogroup --column --path-to-ignore ~/.ignore'
+      " \. " --heading --stats -B 1 -A 4'"
+"
+"     " Can use `vnew` or `new`
+"     let g:side_search_splitter = 'vnew'
+"
+"     " I like 40% splits, change it if you don't
+"     let g:side_search_split_pct = 0.4
 
 " Highlight ES6 template strings
 hi link javaScriptTemplateDelim String
@@ -144,7 +157,7 @@ set laststatus=2
 " airline UI
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-" let g:airline_theme='base16'
+let g:airline_theme='base16'
 
 " separators
 let g:airline#extensions#tabline#left_sep = '▶'
@@ -189,7 +202,7 @@ autocmd VimEnter,BufReadPost,bufwritepost,bufenter * :FixWhitespace
 
 " set default terminal background color
 set background=dark
-" :colorscheme desert
+" :colorscheme solarized
 
 if filereadable(expand("~/.vimrc_background"))
   hi Normal guibg=NONE ctermbg=NONE
@@ -284,9 +297,12 @@ noremap <Leader>p "*p
 noremap <Leader>Y "+b
 noremap <Leader>P "+p
 
-" Ctrlsf remap
-nnoremap <Leader>ss :CtrlSF '
+" ctrlsf remap
+nnoremap <Leader>ss :CtrlSF ''<left>
 nnoremap <Leader>st :CtrlSFToggle<CR>
+" the size of the seatch window
+let g:ctrlsf_winsize = '40%'
+
 
 nnoremap <Leader>5 :vertical resize 50<CR>
 
