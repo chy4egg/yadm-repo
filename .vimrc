@@ -302,6 +302,10 @@ nnoremap <Leader>ss :CtrlSF ''<left>
 nnoremap <Leader>st :CtrlSFToggle<CR>
 " the size of the seatch window
 let g:ctrlsf_winsize = '40%'
+" autofocus at start
+let g:ctrlsf_auto_focus = {
+      \ "at": "start"
+      \ }
 
 
 nnoremap <Leader>5 :vertical resize 50<CR>
