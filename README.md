@@ -18,7 +18,8 @@ setup:
 optional:
 - Tmux (opt) - brew install tmux (for Mac Os)
 - Powerline fonts pack (optional) - https://github.com/powerline/fonts
-- Fira Code font - https://github.com/tonsky/FiraCode
+- Inconsolata font (powerline and cyrillic support) - https://github.com/Gonzih/inconsolata-lgc-for-powerline
+- Fira Code font (opt) - https://github.com/tonsky/FiraCode
 
 2) make neovim read your .vimrc config file
 `
