@@ -202,7 +202,7 @@ autocmd VimEnter,BufReadPost,bufwritepost,bufenter * :FixWhitespace
 
 " set default terminal background color
 set background=dark
-" :colorscheme solarized
+" :colorscheme default
 
 if filereadable(expand("~/.vimrc_background"))
   hi Normal guibg=NONE ctermbg=NONE
