@@ -18,6 +18,8 @@ setup:
 optional:
 - Tmux (opt) - brew install tmux (for Mac Os)
 - Powerline fonts pack (optional) - https://github.com/powerline/fonts
+- Office Code Pro - (based on source code pro) https://github.com/nathco/Office-Code-Pro
+- Hack font - https://sourcefoundry.org/hack/
 - Inconsolata font (powerline and cyrillic support) - https://github.com/Gonzih/inconsolata-lgc-for-powerline
 - Fira Code font (opt) - https://github.com/tonsky/FiraCode
 
