@@ -10,7 +10,7 @@ let mapleader = ","
 
 "vim-plug
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
 Plug 'garbas/vim-snipmate'
 Plug 'pangloss/vim-javascript'
 Plug 'edkolev/promptline.vim'
@@ -203,14 +203,14 @@ autocmd VimEnter,BufReadPost,bufwritepost,bufenter * :FixWhitespace
 
 " set default terminal background color
 set background=dark
-:colorscheme gruvbox
+" :colorscheme gruvbox
 
 hi Normal guibg=NONE ctermbg=NONE
 
-" if filereadable(expand("~/.vimrc_background"))
-"   let base16colorspace=256
-"   source ~/.vimrc_background
-" endif
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 " vim + tmux color setup
 if (empty($TMUX))
