@@ -42,3 +42,4 @@ export LANG=en_US.UTF-8
 
 # petshop ssh starting develop script
 alias develop="~/sh_scripts/tmux_develop.sh"
+alias psdocker="~/sh_scripts/ps_docker.sh"
