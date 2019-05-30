@@ -2,7 +2,8 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/dev4/.oh-my-zsh"
+export ZSH="/Users/dev4/.oh-my-zsh"
+export ZSH="/Users/macbook/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -124,4 +125,5 @@ export LANG=en_US.UTF-8
 
 # petshop ssh starting develop script
 alias develop="~/sh_scripts/tmux_develop.sh"
+alias psdocker="~/sh_scripts/ps_docker.sh"
 
