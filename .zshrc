@@ -2,7 +2,8 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/macbook/.oh-my-zsh"
+export ZSH="/home/dev4/.oh-my-zsh"
+# export ZSH="/Users/macbook/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -13,7 +14,10 @@ export ZSH="/Users/macbook/.oh-my-zsh"
 # ZSH_THEME="robbyrussell"
 #
 # Custom scheme:
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator history time)
 
 # Hide username for agnoster color scheme
 DEFAULT_USER=$USER
@@ -76,7 +80,10 @@ DEFAULT_USER=$USER
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+git
+zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 
