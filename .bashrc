@@ -30,6 +30,7 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias v="nvim"
 
 alias petshop="cd ~/domains/petshopru/"
+alias psfront="cd ~/domains/ps-front/"
 alias pro="cd ~/projects/"
 alias root="cd ~/"
 # alias ag='ag -i --ignore-case --nogroup --nocolor --column'
