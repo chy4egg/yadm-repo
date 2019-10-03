@@ -29,6 +29,9 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 # NeoVim shortcut
 alias v="nvim"
 
+# speed up Linux keyboard input
+alias speedup="xset r rate 250 30"
+
 alias petshop="cd ~/domains/petshopru/"
 alias psfront="cd ~/domains/ps-front/"
 alias pro="cd ~/projects/"
