@@ -31,6 +31,8 @@ alias v="nvim"
 
 # speed up Linux keyboard input
 alias speedup="xset r rate 250 30"
+# sudo /etc/hosts alias
+alias hosts="sudo vim /etc/hosts"
 
 alias petshop="cd ~/domains/petshopru/"
 alias psfront="cd ~/domains/ps-front/"
