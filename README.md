@@ -13,6 +13,11 @@ setup:
 - neovim - https://github.com/neovim/neovim/wiki/Installing-Neovim
 - base16_shell - https://github.com/chriskempson/base16-shell/
 - silver searcher - https://github.com/ggreer/the_silver_searcher
+- zsh - chsh -s /bin/zsh
+- oh-my-zsh - https://github.com/robbyrussell/oh-my-zsh
+- powerline10k zsh theme - https://github.com/romkatv/powerlevel10k#oh-my-zsh
+- zsh fzf plugin - https://github.com/Wyntau/fzf-zsh
+- zsh-autosuggestions - https://github.com/zsh-users/zsh-autosuggestions
 
 optional:
 - Tmux (opt) - brew install tmux (for Mac Os)
