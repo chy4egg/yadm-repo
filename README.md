@@ -18,12 +18,11 @@ setup:
 - powerline10k zsh theme - https://github.com/romkatv/powerlevel10k#oh-my-zsh
 - zsh fzf plugin - https://github.com/Wyntau/fzf-zsh
 - zsh-autosuggestions - https://github.com/zsh-users/zsh-autosuggestions
+- neofetch - https://formulae.brew.sh/formula/neofetch
 
 optional:
 - Tmux (opt) - brew install tmux (for Mac Os)
 - Powerline fonts pack - https://github.com/powerline/fonts
-- Source Code Pro font - https://github.com/adobe-fonts/source-code-pro
-- Hack font - https://sourcefoundry.org/hack/
 
 2) make neovim read your .vimrc config file
 `
