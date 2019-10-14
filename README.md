@@ -22,7 +22,7 @@ setup:
 
 optional:
 - Tmux (opt) - brew install tmux (for Mac Os)
-- Powerline fonts pack - https://github.com/powerline/fonts
+- Nerd fonts pack - https://github.com/ryanoasis/nerd-fonts
 
 2) make neovim read your .vimrc config file
 `
