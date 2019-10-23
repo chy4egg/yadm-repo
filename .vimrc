@@ -202,8 +202,8 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown    " *.md support
 autocmd VimEnter,BufReadPost,bufwritepost,bufenter * :FixWhitespace
 
 " set default terminal background color
-" set background=dark
-set background=light
+set background=dark
+" set background=light
 
 hi Normal guibg=NONE ctermbg=NONE
 
