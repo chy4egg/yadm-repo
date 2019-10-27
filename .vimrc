@@ -43,6 +43,9 @@ Plug 'w0rp/ale'
 Plug 'chriskempson/base16-vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
