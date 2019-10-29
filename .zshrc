@@ -127,6 +127,9 @@ alias root="cd ~/"
 # alias ag='ag -i --ignore-case --nogroup --nocolor --column'
 alias ag='ag -i --ignore-case --nogroup --column --path-to-ignore ~/.ignore'
 alias ack='ack -i --ignore-case --nogroup --column --path-to-ignore ~/.ignore'
+alias tags='-R --exclude=.git --exclude=node_modules --exclude=test --exclude=cache --exclude=build --exclude=dist'
+
+
 
 #makes neovim work in english
 export LC_ALL=en_US.UTF-8
