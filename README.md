@@ -22,8 +22,9 @@ setup:
 - neofetch - https://formulae.brew.sh/formula/neofetch
 
 Fonts:
-- Hack font - https://sourcefoundry.org/hack/
-- Iosevka font - https://github.com/be5invis/Iosevka
+- Hack - https://sourcefoundry.org/hack/
+- Input Mono - https://input.fontbureau.com/
+- Iosevka - https://github.com/be5invis/Iosevka
 - Nerd fonts pack (optional) - https://github.com/ryanoasis/nerd-fonts
 
 2) make neovim read your .vimrc config file
