@@ -18,11 +18,13 @@ setup:
 - powerline10k zsh theme - https://github.com/romkatv/powerlevel10k#oh-my-zsh
 - zsh fzf plugin - https://github.com/Wyntau/fzf-zsh
 - zsh-autosuggestions - https://github.com/zsh-users/zsh-autosuggestions
+- Tmux (opt) - brew install tmux (for Mac Os)
 - neofetch - https://formulae.brew.sh/formula/neofetch
 
-optional:
-- Tmux (opt) - brew install tmux (for Mac Os)
-- Nerd fonts pack - https://github.com/ryanoasis/nerd-fonts
+Fonts:
+- Hack font - https://sourcefoundry.org/hack/
+- Iosevka font - https://github.com/be5invis/Iosevka
+- Nerd fonts pack (optional) - https://github.com/ryanoasis/nerd-fonts
 
 2) make neovim read your .vimrc config file
 `
