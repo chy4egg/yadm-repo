@@ -22,6 +22,7 @@ setup:
 - neofetch - https://formulae.brew.sh/formula/neofetch
 
 Fonts:
+- Source Code Pro - https://github.com/adobe-fonts/source-code-pro
 - Hack - https://sourcefoundry.org/hack/
 - Input Mono - https://input.fontbureau.com/
 - Iosevka - https://github.com/be5invis/Iosevka
