@@ -10,9 +10,8 @@ let mapleader = ","
 
 "vim-plug
 call plug#begin('~/.vim/plugged')
-" Plug 'morhetz/gruvbox'
+" Base
 Plug 'garbas/vim-snipmate'
-Plug 'pangloss/vim-javascript'
 Plug 'edkolev/promptline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-markdown'
@@ -27,7 +26,6 @@ Plug 'ervandew/supertab'
 Plug 'Raimondi/delimitMate'
 Plug 'godlygeek/tabular'
 Plug 'mileszs/ack.vim'
-Plug 'posva/vim-vue'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'honza/vim-snippets'
@@ -39,20 +37,27 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
-Plug 'w0rp/ale'
 Plug 'chriskempson/base16-vim'
+" Frontend
+Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
-Plug 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
-Plug 'leafgarland/typescript-vim'
+Plug 'posva/vim-vue'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+" Other
+Plug 'w0rp/ale'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'skywind3000/gutentags_plus'
+" Deoplete
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 endif
 let g:deoplete#enable_at_startup = 1
 
-" Plug 'ddrscott/vim-side-search'
 call plug#end()
 
 " gutentags settings
@@ -331,7 +336,7 @@ nnoremap <Leader>5 :vertical resize 50<CR>
 
 "Set the line numbers
 set number
-" set relativenumber
+set relativenumber
 
 " a shortcut for replace all matches in a file
 nnoremap <Leader>r :%s/
