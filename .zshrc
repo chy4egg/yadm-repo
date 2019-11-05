@@ -106,10 +106,12 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
   [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
   eval "$("$BASE16_SHELL/profile_helper.sh")"
 
-# NeoVim shortcut
+# Use Neovim as "preferred editor"
+export VISUAL=nvim
+# NeoVim alias
 alias v="nvim"
+# Other aliases
 
-# Example aliases
 alias zshconfig="v ~/.zshrc"
 alias bashconfig="v ~/.bashrc"
 alias zshconfig="v ~/.zshrc"
