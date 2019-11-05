@@ -11,6 +11,7 @@ let mapleader = ","
 "vim-plug
 call plug#begin('~/.vim/plugged')
 " Base
+Plug 'sheerun/vim-polyglot'
 Plug 'garbas/vim-snipmate'
 Plug 'edkolev/promptline.vim'
 Plug 'scrooloose/nerdtree'
@@ -278,9 +279,11 @@ augroup HiglightTODO
     autocmd WinEnter,VimEnter * :silent! call matchadd('Todo', 'TODO', -1)
 augroup END
 
-"fuzzy finder config
-:nnoremap <Leader>t :Files<CR>
-:nnoremap <Leader>T :tab split<CR>:Files<CR>
+"fzf config (ctrl+p)
+:nnoremap <C-p> :Files<CR>
+
+"tagbar config
+:nnoremap <Leader>t :TagbarToggle<CR>
 
 "change the default searcher to the silver searcher
 if executable('ag')
