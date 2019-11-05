@@ -98,9 +98,6 @@ map <Leader>al :ALELint<CR>
 map <Leader>af :ALEFix<CR>
 map <Leader>at :ALEToggle<CR>
 
-"tagbar plugin settings
-nmap <F4> :TagbarToggle<CR>
-
 "vim-vue config
 let g:vue_disable_pre_processors=1
 
@@ -267,11 +264,11 @@ augroup HiglightTODO
     autocmd WinEnter,VimEnter * :silent! call matchadd('Todo', 'TODO', -1)
 augroup END
 
-"fzf config (ctrl+p)
-:nnoremap <C-p> :Files<CR>
-
 "tagbar config
-:nnoremap <Leader>t :TagbarToggle<CR>
+:nnoremap <C-p> :TagbarToggle<CR>
+
+"fzf config (ctrl+p)
+:nnoremap <Leader>t :Files<CR>
 
 "change the default searcher to the silver searcher
 if executable('ag')
