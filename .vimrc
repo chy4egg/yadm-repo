@@ -75,18 +75,6 @@ let g:gutentags_cache_dir = expand('~/.cache/tags')
 " change focus to quickfix window after search (optional).
 let g:gutentags_plus_switch = 1
 
-" side-search settigs
-"
-" How should we execute the search?
-" let g:side_search_prg = 'ag -i --ignore-case --nogroup --column --path-to-ignore ~/.ignore'
-      " \. " --heading --stats -B 1 -A 4'"
-"
-"     " Can use `vnew` or `new`
-"     let g:side_search_splitter = 'vnew'
-"
-"     " I like 40% splits, change it if you don't
-"     let g:side_search_split_pct = 0.4
-
 " Highlight ES6 template strings
 hi link javaScriptTemplateDelim String
 hi link javaScriptTemplateVar Text
