@@ -106,16 +106,16 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
   [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
   eval "$("$BASE16_SHELL/profile_helper.sh")"
 
-# Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias bashconfig="vim ~/.bashrc"
-alias zshconfig="vim ~/.zshrc"
-alias tmuxconfig="vim ~/.tmux.conf"
-alias vimconfig="vim ~/.vimrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
-
 # NeoVim shortcut
 alias v="nvim"
+
+# Example aliases
+alias zshconfig="v ~/.zshrc"
+alias bashconfig="v ~/.bashrc"
+alias zshconfig="v ~/.zshrc"
+alias tmuxconfig="v ~/.tmux.conf"
+alias vimconfig="v ~/.vimrc"
+alias ohmyzsh="v ~/.oh-my-zsh"
 
 # speed up Linux keyboard input
 alias speedup="xset r rate 250 30"
