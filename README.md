@@ -19,6 +19,8 @@ setup:
 - zsh fzf plugin - https://github.com/Wyntau/fzf-zsh
 - zsh-autosuggestions - https://github.com/zsh-users/zsh-autosuggestions
 - Tmux (opt) - brew install tmux (for Mac Os)
+- Tmux plugin manager - git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+- Run Tmux and press prefix + I (capital i, as in Install) to fetch the plugins.
 - neofetch - https://formulae.brew.sh/formula/neofetch
 
 Fonts:
