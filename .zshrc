@@ -74,7 +74,7 @@ DEFAULT_USER=`whoami`
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf-zsh zsh-autosuggestions)
+plugins=(vi-mode git fzf-zsh zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
