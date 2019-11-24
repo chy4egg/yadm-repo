@@ -323,7 +323,7 @@ nnoremap <Leader>5 :vertical resize 50<CR>
 
 "Set the line numbers
 set number
-set relativenumber
+" set relativenumber
 
 " a shortcut for replace all matches in a file
 nnoremap <Leader>r :%s/
