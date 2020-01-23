@@ -119,6 +119,9 @@ alias tmuxconfig="v ~/.tmux.conf"
 alias vimconfig="v ~/.vimrc"
 alias ohmyzsh="v ~/.oh-my-zsh"
 
+# show my ip on mac machine
+alias showip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\  -f2"
+
 # speed up Linux keyboard input
 alias speedup="xset r rate 250 30"
 
