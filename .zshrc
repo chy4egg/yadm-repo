@@ -148,7 +148,7 @@ export LANG=en_US.UTF-8
 alias develop="~/sh_scripts/tmux_develop.sh"
 alias develop_new="~/sh_scripts/tmux_develop_new.sh"
 alias psdocker="~/sh_scripts/ps_docker.sh"
-alias rmworkers="~/sh_scripts/ps_workers.sh"
+alias stopworkers="~/sh_scripts/ps_workers.sh"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
