@@ -1,4 +1,4 @@
-# This is my .dotfiles config repo which includes: tmux, vim, bash/zsh, spacemacs configuration files and also the fonts i use.
+# This is my .dotfiles config repo which includes: tmux, vim, bash/zsh, spacemacs configuration files and also the fonts I use.
 
 installation:
 
